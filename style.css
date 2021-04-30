@@ -1,0 +1,780 @@
+@font-face {
+  font-family: 'Garamond_Med';
+  src: url(/fonts/CormorantGaramond-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Prociono';
+  src: url(/fonts/Prociono-Regular-webfont.woff);
+}
+
+@font-face {
+  font-family: 'Garamond_Reg';
+  src: url(/fonts/CormorantGaramond-Light.ttf);
+  font-weight: lighter;
+}
+
+html {
+  background-color: #f4f1de;
+  background: url(/imgs/img-noise-361x370.png);
+  font-family: Prociono;
+  color: #3e3b3b;
+  overflow: hidden;
+  max-height: -webkit-fill-available;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
+.topgrad {
+  z-index: 9999;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 20px;
+  background: #f4f1de;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244, 241, 222, 0)), to(#f4f1de));
+  background: linear-gradient(180deg, rgba(244, 241, 222, 0) 0%, #f4f1de 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f1de",endColorstr="#f4f1de",GradientType=1);
+}
+
+.botgrad {
+  z-index: 9999;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 100%;
+  height: 20px;
+  background: #f4f1de;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(244, 241, 222, 0)), to(#f4f1de));
+  background: linear-gradient(0deg, rgba(244, 241, 222, 0) 0%, #f4f1de 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f1de",endColorstr="#f4f1de",GradientType=1);
+}
+
+.sortarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: none;
+  height: 30px;
+  padding: 0px 28px;
+}
+
+.sortarea .sort {
+  padding: 0px 20px;
+  margin: 0px;
+  background-color: none;
+  font-size: 1vw;
+}
+
+.sortarea .PercButBox {
+  width: 70%;
+}
+
+.sortarea .RespButBox {
+  width: 15%;
+  text-align: right;
+}
+
+.sortarea .QuesButBox {
+  width: 15%;
+  text-align: right;
+}
+
+.sortarea .RespButBox > .sort {
+  padding: 0px 10px;
+}
+
+.sortarea .sort:after {
+  width: 0;
+  height: 0;
+  content: '\2191';
+  color: transparent;
+  position: relative;
+  top: -2px;
+  right: -7px;
+}
+
+.sortarea .sort.asc:after {
+  width: 0;
+  height: 0;
+  content: '\2191';
+  position: relative;
+  color: #3e3b3b;
+  top: -2px;
+  right: -7px;
+}
+
+.sortarea .sort.desc:after {
+  width: 0;
+  height: 0;
+  content: '\2193';
+  position: relative;
+  color: #3e3b3b;
+  top: -2px;
+  right: -7px;
+}
+
+.navbox {
+  position: absolute;
+  height: 120px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 90%;
+  z-index: 999;
+  padding-top: 30px;
+}
+
+.navbox h1 {
+  font-family: Garamond_Reg;
+  margin: 0px;
+  font-size: 3vw;
+}
+
+.navbox .navItem {
+  font-family: Garamond_Med;
+  font-size: 1.4vw;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px;
+}
+
+.navbox .navItem p {
+  text-align: center;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.navbox .navItem:first-of-type {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.navbox .navItem:last-of-type {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.navbox .navItem:first-of-type:hover {
+  text-decoration: underline;
+}
+
+.navbox .navItem:last-of-type:hover {
+  text-decoration: underline;
+}
+
+.navbox .navItem:first-child > span {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-right: auto;
+}
+
+.navbox .navItem:last-child > span {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+.navbox #Results {
+  text-align: right;
+}
+
+.navbox #About {
+  text-align: left;
+}
+
+#ListBox {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.listarea {
+  position: relative;
+}
+
+.listbox {
+  margin-top: calc(max(10vh, 80px));
+  z-index: 999999;
+  width: 60vw;
+}
+
+.listbox .os-scrollbar-handle {
+  background-color: #3d405b !important;
+}
+
+.listbox .os-scrollbar.os-scrollbar-vertical {
+  border-radius: 8px;
+  width: 16px;
+  background-color: #f2cc8f;
+  padding: 0px;
+  z-index: 99999;
+  top: 20px !important;
+  bottom: 20px !important;
+}
+
+.listbox #List {
+  height: 70vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0px 28px;
+  position: relative;
+}
+
+.listbox li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: #3d405b 2px solid;
+  border-radius: 20px;
+  padding: 25px 25px;
+  margin: 20px 0px;
+}
+
+.listbox li .Percent {
+  margin: 0px;
+  width: 10%;
+  text-align: center;
+  font-size: 3vw;
+  font-family: Didot;
+  font-weight: normal;
+}
+
+.listbox li .Statement {
+  padding-left: 20px;
+  margin: 0px;
+  width: 60%;
+  font-size: 1.3vw;
+}
+
+.listbox li .Responses {
+  margin: 0px;
+  width: 15%;
+  font-family: Didot;
+  text-align: right;
+  font-size: 1vw;
+}
+
+.listbox li .Question {
+  margin: 0px;
+  width: 15%;
+  font-family: Didot;
+  text-align: right;
+  font-size: 1vw;
+}
+
+#container {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  overflow: show;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  padding: 0px;
+}
+
+#mainer {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.buttons {
+  height: 10vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0px;
+  opacity: 0.1;
+  z-index: 9999;
+}
+
+.buttons:hover {
+  opacity: 1;
+}
+
+.link {
+  color: #e07a5f;
+}
+
+#AboutArea {
+  display: none;
+}
+
+.linkbutton {
+  color: #3e3b3b;
+  text-decoration: none;
+}
+
+.grid {
+  width: 10px;
+  height: 10px;
+  border: solid 0.2px #e07a5f;
+  position: absolute;
+  opacity: 0.2;
+  display: none;
+}
+
+.dot {
+  height: auto;
+  position: absolute;
+  overflow: visible;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  transform-box: fill-box;
+  pointer-events: auto;
+}
+
+.small {
+  height: auto;
+  position: absolute;
+  overflow: visible;
+  width: 5px;
+  height: 5px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+  background-color: #f2cc8f;
+}
+
+button {
+  font-family: Prociono;
+}
+
+.textarea {
+  height: auto;
+  max-height: 40%;
+  width: 57%;
+  padding: 5vw;
+  text-align: center;
+  z-index: 0;
+}
+
+.textarea .Question {
+  font-size: 2.5vw;
+  margin-top: 10px;
+  padding-top: 0px;
+  padding-bottom: 1vw;
+}
+
+.textarea .QNum {
+  font-size: 1vw;
+  font-family: Garamond_Reg;
+  font-weight: lighter;
+  margin-bottom: 2vw;
+  margin-top: 0px;
+}
+
+.textarea .IntroText {
+  margin-top: 0px;
+  margin-bottom: 2vw;
+  font-size: 1.4vw;
+}
+
+.textarea #Response {
+  display: none;
+}
+
+.buttonbox {
+  font-size: 1.4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttonbox .button {
+  padding: 8px 20px;
+  border-radius: 50px;
+  -webkit-transition-property: scale;
+  transition-property: scale;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  cursor: pointer;
+  font-family: Garamond_Med;
+  font-weight: normal;
+}
+
+.buttonbox .button:hover {
+  scale: 1.05;
+}
+
+.buttonbox .button:active {
+  scale: 1;
+}
+
+.buttonbox #Yes {
+  background-color: #81b29a;
+}
+
+.buttonbox #No {
+  background-color: #e07a5f;
+}
+
+.buttonbox #Next {
+  background-color: #f2cc8f;
+  display: none;
+}
+
+.buttonbox #Start {
+  background-color: #f2cc8f;
+}
+
+.buttonbox #Suggest {
+  background-color: #f2cc8f;
+  margin: 20px;
+}
+
+#QuizArea {
+  display: none;
+}
+
+.area {
+  padding: 3vw;
+}
+
+.invert svg {
+  scale: -1 1;
+}
+
+svg {
+  display: block;
+}
+
+.red
+> svg:nth-child(1)
+> g:nth-child(2)
+> g:nth-child(2)
+> g:nth-child(1)
+> path:nth-child(1) {
+  fill: #e07a5f;
+}
+
+.green
+> svg:nth-child(1)
+> g:nth-child(2)
+> g:nth-child(2)
+> g:nth-child(1)
+> path:nth-child(1) {
+  fill: #81b29a;
+}
+
+.yellow
+> svg:nth-child(1)
+> g:nth-child(2)
+> g:nth-child(1)
+> g:nth-child(1)
+> path:nth-child(1) {
+  fill: #f2cc8f;
+}
+
+.redtext {
+  color: #e07a5f;
+}
+
+.greentext {
+  color: #81b29a;
+}
+
+@media only screen and (max-width: 760px) {
+  #some-element {
+    display: none;
+  }
+  .textarea {
+    height: auto;
+    max-height: 50%;
+    width: 60%;
+  }
+  .textarea .Question {
+    font-size: 5vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .textarea .QNum {
+    font-size: 3vw;
+  }
+  .textarea .IntroText {
+    font-size: 3vw;
+  }
+  .buttonbox {
+    font-size: 3.5vw;
+    margin-top: 2vw;
+    margin-bottom: -2vw;
+    font-family: Garamond_Med;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .buttonbox .button {
+    margin: 2vw;
+    padding: 8px 12px;
+  }
+  .listbox {
+    width: 95vw;
+  }
+  .navbox {
+    height: 2vh;
+    padding-top: 3vh;
+  }
+  .navbox h1 {
+    font-family: Garamond_Reg;
+    margin: 0px;
+    font-size: 7vw;
+  }
+  .navbox .navItem {
+    font-family: Garamond_Med;
+    font-size: 4vw;
+    margin: 0px;
+  }
+  .listbox {
+    margin-top: 5vh;
+  }
+  .listbox .buttonbox #Suggest {
+    background-color: #f2cc8f;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .listbox .os-scrollbar-handle {
+    background-color: #3d405b !important;
+  }
+  .listbox .os-scrollbar.os-scrollbar-vertical {
+    border-radius: 8px;
+    width: 16px;
+    background-color: #f2cc8f;
+    padding: 0px;
+    z-index: 99999;
+    top: 20px !important;
+    bottom: 20px !important;
+  }
+  .listbox #List {
+    height: 80vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0px 28px;
+    padding-left: 4px;
+    position: relative;
+  }
+  .listbox li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: #3d405b 2px solid;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+  }
+  .listbox li .Percent {
+    margin: 0px;
+    width: 20%;
+    text-align: center;
+    font-size: 7vw;
+    font-weight: normal;
+  }
+  .listbox li .Statement {
+    padding-left: 10px;
+    margin: 0px;
+    width: 50%;
+    font-size: 3vw;
+  }
+  .listbox li .Responses {
+    margin: 0px;
+    width: 15%;
+    text-align: right;
+    font-size: 2vw;
+  }
+  .listbox li .Question {
+    margin: 0px;
+    width: 15%;
+    text-align: right;
+    font-size: 2vw;
+  }
+  .sortarea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: none;
+    height: 30px;
+    padding: 0px 28px;
+    z-index: 999999;
+  }
+  .sortarea .sort {
+    padding: 0px 2px;
+    margin: 0px;
+    background-color: none;
+    font-size: 3vw;
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+  }
+  .sortarea .sorter {
+    padding: 0px 2px;
+    margin: 0px;
+    background-color: none;
+    font-size: 3vw;
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+    display: none;
+  }
+  .sortarea .PercButBox {
+    width: auto;
+  }
+  .sortarea .RespButBox {
+    width: auto;
+    text-align: center;
+  }
+  .sortarea .QuesButBox {
+    width: auto;
+    text-align: center;
+  }
+  .sortarea .RespButBox > .sort {
+    padding: 0px 10px;
+  }
+  .sortarea .sorter {
+    display: block;
+  }
+  .sortarea .sort:after {
+    width: 0;
+    height: 0;
+    content: '\2191';
+    color: transparent;
+    position: relative;
+    top: -2px;
+    right: -3px;
+  }
+  .sortarea .sort.asc:after {
+    width: 0;
+    height: 0;
+    content: '\2191';
+    position: relative;
+    color: #3e3b3b;
+    top: -2px;
+    right: -3px;
+  }
+  .sortarea .sort.desc:after {
+    width: 0;
+    height: 0;
+    content: '\2193';
+    position: relative;
+    color: #3e3b3b;
+    top: -2px;
+    right: -3px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
