@@ -425,6 +425,8 @@ ul {
 
 button {
   font-family: Prociono;
+  text-decoration: none;
+  color: #3e3b3b;
 }
 
 .textarea {
@@ -484,6 +486,8 @@ button {
   cursor: pointer;
   font-family: Garamond_Med;
   font-weight: normal;
+  text-decoration: none;
+  color: #3e3b3b;
 }
 
 .buttonbox .button:hover {

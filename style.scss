@@ -358,6 +358,8 @@ ul {
 }
 button {
     font-family: Prociono;
+    text-decoration: none;
+    color: $black;
 }
 
 .textarea {
@@ -407,6 +409,8 @@ button {
         cursor: pointer;
         font-family: Garamond_Med;
         font-weight: normal;
+        text-decoration: none;
+        color: $black;
     }
     .button:hover {
         scale: 1.05;
