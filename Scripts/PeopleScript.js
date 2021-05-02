@@ -150,8 +150,7 @@ function loadLotties() {
         movePeople(dot, intialArr, n, true);
         let invert = Math.floor(getRandomArbitrary(1, 3));
         let svgNum = Math.floor(getRandomArbitrary(1, 6));
-        // let sizeNum = getRandomArbitrary(0.8, 1.2);
-        let sizeNum = 1;
+        let sizeNum = getRandomArbitrary(0.8, 1.2);
 
         let aniNom = bodymovin.loadAnimation({
             name: divNo,
