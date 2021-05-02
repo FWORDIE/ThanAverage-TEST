@@ -21,6 +21,8 @@ let longestTime = 0;
 let aninmationSpeed = 3;
 let is_mobile = false;
 
+console.log(containerHeight, containerWidth);
+
 
 //Check Mobile
 function Mobile() {      
@@ -148,7 +150,9 @@ function loadLotties() {
         movePeople(dot, intialArr, n, true);
         let invert = Math.floor(getRandomArbitrary(1, 3));
         let svgNum = Math.floor(getRandomArbitrary(1, 6));
-        let sizeNum = getRandomArbitrary(0.8, 1.2);
+        // let sizeNum = getRandomArbitrary(0.8, 1.2);
+        let sizeNum = 1;
+
         let aniNom = bodymovin.loadAnimation({
             name: divNo,
             container: document.getElementById(divNo), // required

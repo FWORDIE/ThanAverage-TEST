@@ -1,4 +1,6 @@
 // Load Fauna Stuff
+let NoCalls = 0;
+let NoPosts = 0;
 var faunadb = window.faunadb;
 var q = faunadb.query;
 var client = new faunadb.Client({
@@ -8,6 +10,8 @@ var client = new faunadb.Client({
 });
 // Load DataBase from Fauna
 function GetDataBase() {
+    NoCalls ++;
+    console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
     client
         .query(q.Get(q.Ref(q.Collection("QuestionArr"), "297196213111882241")))
 
@@ -25,6 +29,8 @@ function test4() {
 
 // Update Fauna DataBase
 function UpdateDataBase(Num, Answer) {
+    NoPosts ++;
+    console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
     let data = questions;
     client
         .query(

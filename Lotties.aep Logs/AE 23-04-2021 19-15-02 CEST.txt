@@ -1,1 +1,0 @@
-  23/04/2021 19:15:02 CEST: Starting composition “tempConverterComp”.  Output To: /private/var/folders/62/tg03j7gd4sddzjjm56pfhdcr0000gn/T/TemporaryItems/Bodymovin/5r545hb8ra/img_0.png    23/04/2021 19:15:02 CEST: Finished composition “tempConverterComp”.  Total Time Elapsed: 0 SecondsLog closed on 23/04/2021 at 19:15:02 CEST
