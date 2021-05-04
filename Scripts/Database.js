@@ -16,7 +16,7 @@ function GetDataBase() {
         .query(q.Get(q.Ref(q.Collection("QuestionArr"), "297196213111882241")))
 
         .then((ret) => {
-            questions = ret.data.data;
+            questions = ret.data.QuestionsArr;
             console.log(questions);
         })
         .catch((err) => console.error("Error: %s", err));
@@ -31,12 +31,12 @@ function test4() {
 function UpdateDataBase(Num, Answer) {
     NoPosts ++;
     console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
-    let data = questions;
+    let QuestionsArr = questions;
     client
         .query(
             q.Update(q.Ref(q.Collection("QuestionArr"), "297196213111882241"), {
                 data: {
-                    data,
+                    QuestionsArr,
                 },
             })
         )
