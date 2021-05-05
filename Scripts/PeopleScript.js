@@ -109,15 +109,6 @@ function generateStartingGrid() {
     let m = 0;
     for (let i = 0; i < x; i++) {
         for (let j = 0; j < y; j++) {
-            // grid generater
-            let grid = document.createElement("div");
-            grid.className = "grid " + n;
-            grid.style.left = refWid * i + "px";
-            grid.style.top = refHei * j + "px";
-            grid.style.width = blobWid + "px";
-            grid.style.height = blobHei + "px";
-            document.getElementById("container").appendChild(grid);
-            grid.innerHTML = n;
             // People point generater
             if (Gaps.includes(n)) {
             } else {
@@ -214,7 +205,7 @@ function movePeople(item, Arr, n, instant) {
     } else {
         s = speed;
     }
-    item.style.transition = travel(xData, yData, oldX, oldY, s, item);
+    item.style.transitionDuration = travel(xData, yData, oldX, oldY, s, item);
     item.style.transform = "translate(" + xData + "px," + yData + "px)";
     item.setAttribute("xData", xData);
     item.setAttribute("yData", yData);
@@ -298,7 +289,7 @@ function travel(newx, newy, oldx, oldy, speed, item) {
         longestTime = traveltime;
     }
     console.log("long:" + longestTime);
-    return "all " + traveltime + "s cubic-bezier(.45,.05,.55,.95)";
+    return traveltime + "s";
 }
 
 //Generate Result Grid
@@ -382,10 +373,6 @@ function findXY(div) {
     let values = tr.split("(")[1];
     values = values.split(")")[0];
     values = values.split(",");
-    let a = values[0];
-    let b = values[1];
-    let c = values[2];
-    let d = values[3];
     let x = values[4];
     let y = values[5];
     return [x, y];

@@ -13,10 +13,13 @@ function GetDataBase() {
     NoCalls ++;
     console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
     client
-        .query(q.Get(q.Ref(q.Collection("QuestionArr"), "297196213111882241")))
+        .query(
+            q.Paginate(q.Match(q.Index("AllDemQuestions")))
+
+            )
 
         .then((ret) => {
-            questions = ret.data.QuestionsArr;
+            questions = ret.data;
             console.log(questions);
         })
         .catch((err) => console.error("Error: %s", err));
@@ -31,15 +34,58 @@ function test4() {
 function UpdateDataBase(Num, Answer) {
     NoPosts ++;
     console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
-    let QuestionsArr = questions;
-    client
+    if(Answer == 'yes'){
+        client
         .query(
-            q.Update(q.Ref(q.Collection("QuestionArr"), "297196213111882241"), {
-                data: {
-                    QuestionsArr,
-                },
-            })
+            q.Map(q.Paginate(q.Match(q.Index('QuestionArrNum'),Num)),
+            q.Lambda(
+                'X',
+                q.Update(
+                  q.Var('X'),
+                  {
+                    data: {
+                        Total: q.Add(
+                        q.Select(['data', 'Total'], q.Get(q.Var('X'))),
+                        1
+                      ),
+                      Yes: q.Add(
+                        q.Select(['data', 'Yes'], q.Get(q.Var('X'))),
+                        1
+                      )
+                    }
+                  }
+                )
+            )
+        )
         )
         .then((ret) => console.log(ret))
         .catch((err) => console.error("Error: %s", err));
+    }else{
+        client
+        .query(
+            q.Map(q.Paginate(q.Match(q.Index('QuestionArrNum'),Num)),
+            q.Lambda(
+                'X',
+                q.Update(
+                  q.Var('X'),
+                  {
+                    data: {
+                        Total: q.Add(
+                        q.Select(['data', 'Total'], q.Get(q.Var('X'))),
+                        1
+                      ),
+                      No: q.Add(
+                        q.Select(['data', 'No'], q.Get(q.Var('X'))),
+                        1
+                      )
+                    }
+                  }
+                )
+            )
+        )
+        )
+        .then((ret) => console.log(ret))
+        .catch((err) => console.error("Error: %s", err));
+    }
+    
 }

@@ -83,17 +83,17 @@ function NewQues() {
     clearstyle();
     Qnum = NewQnum();
     console.log(questions[QNum]);
-    QNumArea.innerText = "Q" + questions[QNum].Number;
-    QuesArea.innerText = questions[QNum].Question;
-    YesArea.innerText = "Yes, " + questions[QNum].Pro;
-    NoArea.innerText = "No, " + questions[QNum].Neg;
+    QNumArea.innerText = "Q" + questions[QNum][0];
+    QuesArea.innerText = questions[QNum][1];
+    YesArea.innerText = "Yes, " + questions[QNum][2];
+    NoArea.innerText = "No, " + questions[QNum][3];
     FadeIn();
 }
 
 // Record Answer
 function Answer(type) {
     FadeOut();
-    questions[QNum].Total++;
+    questions[QNum][6]++;
     let QPcent = GenPcent(QNum);
     let LowQPcent = Math.round(GenPcent(QNum));
     showResults(LowQPcent, false, false);
@@ -104,22 +104,24 @@ function Answer(type) {
         QuesBox.style.display = "none";
         YesArea.style.display = "none";
         NoArea.style.display = "none";
-        QNumArea.innerText = questions[QNum].Total + " Responses";
+        QNumArea.innerText = questions[QNum][6] + " Responses";
 
         if (type == "yes") {
             PercArea.innerText = LowQPcent + "%";
-            RespArea.innerText = questions[QNum]["Positve response"];
+            RespArea.innerText = questions[QNum][4];
             PercArea.classList.add("greentext");
             RespArea.classList.add("greentext");
-            questions[QNum].Yes++;
+            questions[QNum][7]++;
             console.log("yes");
+            UpdateDataBase(Qnum+1, "yes");
         } else {
             PercArea.innerText = 100 - LowQPcent + "%";
-            RespArea.innerText = questions[QNum]["Negative Response"];
+            RespArea.innerText = questions[QNum][5]
             PercArea.classList.add("redtext");
             RespArea.classList.add("redtext");
-            questions[QNum].No++;
+            questions[QNum][8]++;
             console.log("no");
+            UpdateDataBase(Qnum+1, "no");
         }
 
         console.log(questions[QNum]);
@@ -127,12 +129,12 @@ function Answer(type) {
         console.log(QPcent);
     }, Math.round((longestTime * 1000) / 2));
 
-    UpdateDataBase();
+    
 }
 
 // Generate Percent
 function GenPcent(Num) {
-    let Frac = questions[Num].Yes / questions[Num].Total;
+    let Frac = questions[Num][7] / questions[Num][6];
     let Pcent = (Frac * 100).toFixed(1);
     return Pcent;
 }

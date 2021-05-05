@@ -1,23 +1,7 @@
-@font-face {
-  font-family: 'Garamond_Med';
-  src: url(/fonts/CormorantGaramond-Medium.ttf);
-}
-
-@font-face {
-  font-family: 'Prociono';
-  src: url(/fonts/Prociono-Regular-webfont.woff);
-}
-
-@font-face {
-  font-family: 'Garamond_Reg';
-  src: url(/fonts/CormorantGaramond-Light.ttf);
-  font-weight: lighter;
-}
-
 html {
   background-color: #f4f1de;
   background: url(/imgs/img-noise-361x370.png);
-  font-family: Prociono;
+  font-family: 'Prociono';
   color: #3e3b3b;
   overflow: hidden;
   max-height: -webkit-fill-available;
@@ -160,13 +144,15 @@ html, body {
 }
 
 .navbox h1 {
-  font-family: Garamond_Reg;
+  font-family: 'Cormorant Garamond';
+  font-weight: 300;
   margin: 0px;
   font-size: 3vw;
 }
 
 .navbox .navItem {
-  font-family: Garamond_Med;
+  font-family: 'Cormorant Garamond';
+  font-weight: 500;
   font-size: 1.4vw;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -408,6 +394,12 @@ ul {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   transform-box: fill-box;
+  -webkit-transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+          transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
   pointer-events: auto;
 }
 
@@ -424,7 +416,7 @@ ul {
 }
 
 button {
-  font-family: Prociono;
+  font-family: 'Prociono';
   text-decoration: none;
   color: #3e3b3b;
 }
@@ -447,7 +439,8 @@ button {
 
 .textarea .QNum {
   font-size: 1vw;
-  font-family: Garamond_Reg;
+  font-family: 'Cormorant Garamond';
+  font-weight: 300;
   font-weight: lighter;
   margin-bottom: 2vw;
   margin-top: 0px;
@@ -500,7 +493,8 @@ button {
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms;
   cursor: pointer;
-  font-family: Garamond_Med;
+  font-family: 'Cormorant Garamond';
+  font-weight: 500;
   font-weight: normal;
   text-decoration: none;
   color: #3e3b3b;
@@ -613,7 +607,8 @@ svg {
     font-size: 3.5vw;
     margin-top: 2vw;
     margin-bottom: -2vw;
-    font-family: Garamond_Med;
+    font-family: 'Cormorant Garamond';
+    font-weight: 500;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -631,12 +626,14 @@ svg {
     padding-top: 3vh;
   }
   .navbox h1 {
-    font-family: Garamond_Reg;
+    font-family: 'Cormorant Garamond';
+    font-weight: 300;
     margin: 0px;
     font-size: 7vw;
   }
   .navbox .navItem {
-    font-family: Garamond_Med;
+    font-family: 'Cormorant Garamond';
+    font-weight: 500;
     font-size: 4vw;
     margin: 0px;
   }

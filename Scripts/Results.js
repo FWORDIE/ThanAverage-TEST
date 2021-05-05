@@ -92,17 +92,17 @@ function GenResultsArray() {
         let Class = "";
         if (ResPercent < 50) {
             ResPercent = 100 - ResPercent;
-            Statement = questions[n]["Negative Response"];
+            Statement = questions[n][5];
             Class = "color: #E07A5F";
         } else {
             ResPercent = ResPercent - 0;
-            Statement = questions[n]["Positve response"];
+            Statement = questions[n][4];
             Class = "color: #81B29A";
         }
         ResultsArr.push({
             Percent: Math.round(ResPercent) + "%",
-            Responses: questions[n].Total,
-            Question: "Q" + questions[n].Number,
+            Responses: questions[n][6],
+            Question: "Q" + questions[n][0],
             StatementTXT: Statement,
             Class: Class,
             Class2: Class,

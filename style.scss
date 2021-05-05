@@ -10,27 +10,13 @@ $ListText: 1.3vw;
 $LARGE: 3vw;
 $SMALL: 1vw;
 
-@font-face {
-    font-family: 'Garamond_Med';
-    src: url(/fonts/CormorantGaramond-Medium.ttf);
-}
 
-@font-face {
-    font-family: 'Prociono';
-    src: url(/fonts/Prociono-Regular-webfont.woff);
-}
-
-@font-face {
-    font-family: 'Garamond_Reg';
-    src: url(/fonts/CormorantGaramond-Light.ttf);
-    font-weight: lighter;
-}
 
 
 html {
     background-color: $cream;
     background: url(/imgs/img-noise-361x370.png);
-    font-family: Prociono;
+font-family: 'Prociono';
     color: $black;
     overflow: hidden;
     max-height: -webkit-fill-available;
@@ -152,12 +138,14 @@ html, body {
     z-index: 999;
     padding-top: 30px;
     h1 {
-        font-family: Garamond_Reg;
+        font-family: 'Cormorant Garamond';
+        font-weight: 300;
         margin: 0px;
         font-size: 3vw;
     }
     .navItem {
-        font-family: Garamond_Med;
+            font-family: 'Cormorant Garamond';
+    font-weight: 500;
         font-size: 1.4vw;
         align-items: flex-end;
         flex: 1;
@@ -343,7 +331,8 @@ ul {
     //width: 3vw;
     transform-origin: center center;
     transform-box: fill-box;
-    //background-color: $blue;
+    transition-timing-function: cubic-bezier(.45,.05,.55,.95);
+    transition-property: transform;
     pointer-events: auto;
 }
 .small {
@@ -357,7 +346,7 @@ ul {
     background-color: $yellow;
 }
 button {
-    font-family: Prociono;
+    font-family: 'Prociono';
     text-decoration: none;
     color: $black;
 }
@@ -378,7 +367,8 @@ button {
     }
     .QNum {
         font-size: 1vw;
-        font-family: Garamond_Reg;
+        font-family: 'Cormorant Garamond';
+    font-weight: 300;
         font-weight: lighter;
         margin-bottom: 2vw;
         margin-top: 0px;
@@ -418,7 +408,8 @@ button {
         transition-property: scale;
         transition-duration: 200ms;
         cursor: pointer;
-        font-family: Garamond_Med;
+            font-family: 'Cormorant Garamond';
+    font-weight: 500;
         font-weight: normal;
         text-decoration: none;
         color: $black;
@@ -537,7 +528,8 @@ svg {
         font-size: 3.5vw;
         margin-top: 2vw;
         margin-bottom: -2vw;
-        font-family: Garamond_Med;
+            font-family: 'Cormorant Garamond';
+    font-weight: 500;
         flex-direction: column;
         .button{
             margin:2vw;
@@ -551,12 +543,14 @@ svg {
       height: 2vh;
       padding-top: 3vh;
       h1 {
-        font-family: Garamond_Reg;
+        font-family: 'Cormorant Garamond';
+    font-weight: 300;
         margin: 0px;
         font-size: 7vw;
     }
     .navItem {
-        font-family: Garamond_Med;
+            font-family: 'Cormorant Garamond';
+    font-weight: 500;
         font-size: 4vw;
         margin: 0px;
      
