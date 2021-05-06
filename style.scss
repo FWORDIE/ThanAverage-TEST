@@ -10,6 +10,40 @@ $ListText: 1.3vw;
 $LARGE: 3vw;
 $SMALL: 1vw;
 
+@font-face {
+    font-family: 'Theano 'Theano Didot'';
+    src: url('TheanoDidot-Regular.woff2') format('woff2'),
+        url('TheanoDidot-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prociono';
+    src: url('fonts/Prociono-Regular.woff2') format('woff2'),
+        url('fonts/Prociono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('fonts/CormorantGaramond-Medium.woff2') format('woff2'),
+        url('fonts/CormorantGaramond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('fonts/CormorantGaramond-Light.woff2') format('woff2'),
+        url('fonts/CormorantGaramond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 
@@ -139,7 +173,7 @@ html, body {
     padding-top: 30px;
     h1 {
         font-family: 'Cormorant Garamond';
-        font-weight: 300;
+        font-weight: 500;
         margin: 0px;
         font-size: 3vw;
     }
@@ -241,7 +275,7 @@ ul {
             width: 10%;
             text-align: center;
             font-size: $LARGE;
-            font-family: Didot;
+            font-family: 'Theano Didot';
             font-weight: normal;
         }
         .Statement {
@@ -253,14 +287,14 @@ ul {
         .Responses {
             margin: 0px;
             width: 15%;
-            font-family: Didot;
+            font-family: 'Theano Didot';
             text-align: right;
             font-size: $SMALL;
         }
         .Question {
             margin: 0px;
             width: 15%;
-            font-family: Didot;
+            font-family: 'Theano Didot';
             text-align: right;
             font-size: $SMALL;
         }
