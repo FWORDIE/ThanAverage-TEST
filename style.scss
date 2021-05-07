@@ -365,8 +365,9 @@ ul {
     //width: 3vw;
     transform-origin: center center;
     transform-box: fill-box;
+    transform: translate(-50%, -50%);
     transition-timing-function: cubic-bezier(.45,.05,.55,.95);
-    transition-property: transform;
+    transition-property: transform, top, left;
     pointer-events: auto;
 }
 .small {
@@ -481,6 +482,7 @@ button {
 
 .invert svg {
     scale: -1 1;
+    transform: scale(-1, 1);
 }
 svg {
     display: block;

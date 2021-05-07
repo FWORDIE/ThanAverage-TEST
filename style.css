@@ -426,12 +426,14 @@ ul {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   transform-box: fill-box;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
           transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
+  -webkit-transition-property: top, left, -webkit-transform;
+  transition-property: top, left, -webkit-transform;
+  transition-property: transform, top, left;
+  transition-property: transform, top, left, -webkit-transform;
   pointer-events: auto;
 }
 
@@ -572,6 +574,8 @@ button {
 
 .invert svg {
   scale: -1 1;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
 }
 
 svg {

@@ -1,17 +1,18 @@
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = containerWidth / 4;
+let speed = containerWidth / 50;
 let bias = 100;
 let x = 14;
 let y = 10;
 let t = 4;
 let bx = 8;
 let by = 4;  
-let refWid = containerWidth / x;
-let refHei = containerHeight / y;
+let refWid = 100 / x;
+let refHei = 100 / y;
 let blobWid = refWid;
 let blobHei = refHei;
-let intialArr = [];
+let dotData = [];
+let resetData = [];
 let resultState = false;
 let moving = 0;
 let oldArr = [];
@@ -21,7 +22,7 @@ let longestTime = 0;
 let aninmationSpeed = 3;
 let is_mobile = false;
 
-console.log(containerHeight, containerWidth);
+//console.log(containerHeight, containerWidth);
 
 
 //Check Mobile
@@ -33,14 +34,14 @@ function Mobile() {
         t = 8;
         bx = 6;
         by = 8;
-        refWid = containerWidth / x;
-        refHei = containerHeight / y;
+        refWid = 100 / x;
+        refHei = 100 / y;
         blobWid = refWid;
         blobHei = refHei;    
         is_mobile = true;  
     }
-    console.log(is_mobile)
-    console.log('x:'+ x, 'y:'+ y, 'bx:'+ bx, 'by:'+ by )
+    //console.log(is_mobile)
+    //console.log('x:'+ x, 'y:'+ y, 'bx:'+ bx, 'by:'+ by )
 
  };
 
@@ -52,7 +53,7 @@ function test3() {
 
 // Test Button Runaway
 function runaway() {
-    console.log("Runway Start resultState " + resultState);
+    //console.log("Runway Start resultState " + resultState);
     showResults(oldNum, true);
     setTimeout(() => {
         for (let n = 1; n <= 100; n++) {
@@ -74,12 +75,11 @@ function test1() {
 // Test Button Reset People
 function reset() {
     longestTime = 0;
-    for (let n = 1; n <= 100; n++) {
-        let nsvg = document.getElementById("no" + n);
-        nsvg.classList.remove("green");
-        nsvg.classList.remove("red");
-        movePeople(nsvg, intialArr, n - 1);
+    for (let n = 0; n < 100; n++) {
+        dotData[n][7] = "";
+        movePeople(n, resetData, n);
     }
+    writeData();
     resultState = false;
 }
 
@@ -116,12 +116,14 @@ function generateStartingGrid() {
                 var dotOffHei = getRandomArbitrary(0.2, 0.8) * refHei;
                 let xData = refWid * i + dotOffWid;
                 let yData = refHei * j + dotOffHei;
-                intialArr[m] = [xData, yData];
+                dotData[m] = [xData, yData, 0, 0, 0, 0, 0,"blue"];
+                resetData[m] = [xData, yData];
                 m++;
             }
             n++;
         }
     }
+    console.log("generateStartingGrid: " + dotData)
 }
 
 // Load Lottie Files
@@ -136,50 +138,50 @@ function loadLotties() {
         dot.className = "dot";
         let divNo = "no" + (n + 1);
         dot.id = divNo;
-        document.getElementById("container").appendChild(dot);
-        dot.style.transform = "translate(" + 0 + "px," + 0 + "px)";
-        movePeople(dot, intialArr, n, true);
-        let invert = Math.floor(getRandomArbitrary(1, 3));
-        let svgNum = Math.floor(getRandomArbitrary(1, 6));
-        let sizeNum = getRandomArbitrary(0.8, 1.2);
-
+        //movePeople(dot, intialArr, n, true);
+        let svgNum = Math.floor(getRandomArbitrary(0, 5));
         let aniNom = bodymovin.loadAnimation({
             name: divNo,
-            container: document.getElementById(divNo), // required
-            path: "People SVGS/Jsons/" + svgNum + ".json", // required
+            container: dot, // required
+            animationData: People[svgNum][0],
             renderer: "svg", // required
             loop: true, // optional
             autoplay: false, // optional
         });
-        document.getElementById(divNo).addEventListener("mouseenter", (e) => {
+        dot.addEventListener("mouseenter", (e) => {
             aniNom.play();
         });
-        document.getElementById(divNo).addEventListener("mouseleave", (e) => {
+        dot.addEventListener("mouseleave", (e) => {
             aniNom.stop();
         });
-        document.getElementById(divNo).addEventListener("transitionrun", () => {
+        dot.addEventListener("transitionrun", () => {
             aniNom.setSpeed(aninmationSpeed);
             aniNom.play();
             moving++;
         });
-        document.getElementById(divNo).addEventListener("transitionend", () => {
+        dot.addEventListener("transitionend", () => {
             aniNom.setSpeed(1);
             aniNom.stop();
             moving--;
         });
+        let invert = Math.floor(getRandomArbitrary(1, 3));
         if (invert == 1) {
             dot.className = "dot invert";
         } else {
         }
-        dot.style.width = 4 * sizeNum + "vw";
+        let sizeNum = getRandomArbitrary(0.8, 1.2);
+        dotData[n][3] = 4 * sizeNum.toFixed(1);
         if(is_mobile == true){
-            dot.style.width = 6 * sizeNum + "vw";  
+            dotData[n][3] = 6 * sizeNum.toFixed(1);  
         }
+        dotData[n][8] = People[svgNum][1]*dotData[n][3];
+        document.getElementById("container").appendChild(dot);
+        
     }
-    var readywidth = document.getElementById("no100").offsetHeight;
+    console.log(dotData);
+    //var readywidth = document.getElementById("no100").offsetHeight;
     showResults(50, true, true);
-    resultState = false;
-    PeopleGen = true;
+    resultState = false;    
 }
 
 // Wait
@@ -191,25 +193,40 @@ function wait(A, B) {
     }
 }
 
+// Set Movement Data
+function setData(n){
+}
+
+// Write Movement Data
+function writeData(){
+    for(n=0;n<100;n++){
+        let dot = document.getElementById("no"+(n+1));
+        dot.setAttribute("style","left:"+dotData[n][0]+"%; top:" +dotData[n][1]+ "%; transition-duration:" + dotData[n][2]+"; width:"+ dotData[n][3]+"%; z-index:"+dotData[n][6]+";");
+        dot.classList.remove("green","red","blue");
+        dot.classList.add(dotData[n][7]|| "blue");
+    }
+    console.log("write")
+
+} 
+
 // Move People
 function movePeople(item, Arr, n, instant) {
-    //console.log(item);
-    let xData = Arr[n][0] - item.offsetWidth / 2;
-    let yData = Arr[n][1] - item.offsetHeight / 2;
-    let zindex = Arr[n][1] + item.offsetHeight / 2;
-    //console.log("Height:" + item.offsetHeight +", width:" +item.offsetWidth)
-    let oldX = findXY(item)[0];
-    let oldY = findXY(item)[1];
+    let xData = Arr[n][0];
+    let yData = Arr[n][1];
+    let oldX = dotData[item][0];
+    let oldY = dotData[item][1];
     if (instant == true) {
         s = Infinity;
     } else {
         s = speed;
     }
-    item.style.transitionDuration = travel(xData, yData, oldX, oldY, s, item);
-    item.style.transform = "translate(" + xData + "px," + yData + "px)";
-    item.setAttribute("xData", xData);
-    item.setAttribute("yData", yData);
-    item.style.zIndex = Math.floor(zindex);
+    dotData[item][2] = travel(xData, yData, oldX, oldY, s);
+    dotData[item][4] = oldX;
+    dotData[item][5] = oldY;
+    dotData[item][0] = xData;
+    dotData[item][1] = yData;
+    dotData[item][6] = ((yData + (dotData[item][8]/2))*10).toFixed(0);
+    //console.log(dotData[item]);
 }
 
 // Get Random Number
@@ -222,7 +239,12 @@ function showResults(num, runaway, instant) {
     var error = 0;
     var arr = [];
     if (runaway == true && resultState == false) {
-        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+        arr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 
+                31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 
+                41, 42, 43, 44, 45, 46, 47, 48, 49, 50
+            ];
     } else if (runaway == true && resultState == true) {
         arr = oldArr;
     } else {
@@ -231,56 +253,55 @@ function showResults(num, runaway, instant) {
             if (arr.indexOf(r) === -1) arr.push(r);
         }
     }
-    var pointsG = gridsetup(num, bias, 0, runaway);
-    var pointsR = gridsetup(100 - num, bias, 1, runaway);
+    var pointsG = gridsetup(num, bias, 0, runaway); // Green Point Arr
+    var pointsR = gridsetup(100 - num, bias, 1, runaway); // Red Point Arr
+    //console.log(pointsG, pointsR)
     var binG = [];
     var binR = [];
     longestTime = 0;
     for (let n = 100; n > 0; n--) {
-        let nsvg = document.getElementById("no" + n);
-        findXY(nsvg);
-        let oldy = findXY(nsvg)[1];
-        let oldx = findXY(nsvg)[0];
+
+        let oldx = dotData[n-1][0];
+        let oldy = dotData[n-1][1];
+
         if (arr.includes(n)) {
-            nsvg.classList.remove("green");
-            nsvg.classList.remove("red");
+
             if (runaway == true) {
             } else {
-                nsvg.classList.add("green");
+                dotData[n-1][7] = 'green';
             }
             let closeP = pointchoice(oldx, oldy, pointsG, binG)[0];
             binG.push(closeP);
-            movePeople(nsvg, pointsG, closeP, instant);
+            movePeople(n-1, pointsG, closeP, instant);
         } else {
         }
     }
     for (let n = 1; n < 101; n++) {
-        let nsvg = document.getElementById("no" + n);
-        findXY(nsvg);
-        //console.log(runaway);
-        let oldy = findXY(nsvg)[1];
-        let oldx = findXY(nsvg)[0];
-        //console.log(oldy, oldx);
+
+        let oldx = dotData[n-1][0];
+        let oldy = dotData[n-1][1];
+
         if (arr.includes(n)) {
         } else {
-            nsvg.classList.remove("green");
-            nsvg.classList.remove("red");
+
             if (runaway == true) {
             } else {
-                nsvg.classList.add("red");
+                dotData[n-1][7] = 'red';
             }
             let closeP = pointchoice(oldx, oldy, pointsR, binR)[0];
             binR.push(closeP);
-            movePeople(nsvg, pointsR, closeP, instant);
+            movePeople(n-1, pointsR, closeP, instant);
         }
     }
     oldArr = arr;
     oldNum = num;
     resultState = true;
+    console.log(dotData);
+    writeData();
 }
 
 //Speed controller
-function travel(newx, newy, oldx, oldy, speed, item) {
+function travel(newx, newy, oldx, oldy, speed) {
     let x = newx - oldx;
     let y = newy - oldy;
     let d = Math.sqrt(x * x + y * y);
@@ -288,37 +309,30 @@ function travel(newx, newy, oldx, oldy, speed, item) {
     if (traveltime > longestTime) {
         longestTime = traveltime;
     }
-    console.log("long:" + longestTime);
+    //console.log("long:" + longestTime);
     return traveltime + "s";
 }
 
 //Generate Result Grid
 function gridsetup(num, bias, rule, runaway) {
-    let name = [];
+    let gridArr = [];
     var i;
-
     for (i = 0; i < num; i++) {
-        name[i] = randomPointOf(i, bias, rule);
+        gridArr[i] = randomPointOf(i, bias, rule);
         if (runaway == true) {
             if (rule == 0) {
-                name[i][0] = name[i][0] - containerWidth / 4;
+                gridArr[i][0] = parseFloat(gridArr[i][0])-20;
             } else {
-                name[i][0] = name[i][0] + containerWidth / 4;
+                gridArr[i][0] = parseFloat(gridArr[i][0])+20;
             }
         } else {
         }
+        gridArr[i][1] = gridArr[i][1]-0;
+        gridArr[i][0] = gridArr[i][0]-0;
     }
+    console.log(gridArr)
 
-    //Ghost Points
-    // for(let n = 0; n < name.length; n++){
-    //     let dot = document.createElement('div');
-    //     dot.className ='small';
-    //     dot.id = "Demo" +n;
-    //     dot.style.transform = "translate(" + name[n][0] + 'px,' + name[n][1]+ 'px)' ;
-    //     document.getElementById('container').appendChild(dot);
-    //     }
-    //console.log(name);
-    return name;
+    return gridArr;
 }
 
 //Generate Result Grid Points
@@ -330,16 +344,18 @@ function randomPointOf(n, bias, val) {
     let ys = h / spread;
     n = n % bias;
     let ny = (n % spread) * ys;
-    let nx = Math.floor(n / spread) * xs;
+    let nx = (n / spread) * xs;
+    let xx = 0;
+    let yy = 0;
     if (val == 1) {
-        let xx = containerWidth - Math.floor(Math.random() * xs + nx);
-        let yy = Math.floor(Math.random() * ys + ny) + refHei;
-        return [xx, yy];
+        xx = 100 - (Math.random() * xs + nx);
+        yy = (Math.random() * ys + ny) + refHei;
     } else {
-        let xx = Math.floor(Math.random() * xs + nx);
-        let yy = Math.floor(Math.random() * ys + ny) + refHei;
-        return [xx, yy];
+        xx = (Math.random() * xs + nx);
+        yy = (Math.random() * ys + ny) + refHei;   
     }
+    
+    return [xx.toFixed(1), yy.toFixed(1)];
 }
 
 // Choose what point to Go to
