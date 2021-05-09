@@ -1,6 +1,6 @@
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = containerWidth / 40;
+let speed = containerWidth / 25;
 let bias = 100;
 let x = 14;
 let y = 10;
