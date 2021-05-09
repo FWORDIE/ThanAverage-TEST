@@ -1,6 +1,6 @@
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = containerWidth / 25;
+let speed = containerWidth / 50;
 let bias = 100;
 let x = 14;
 let y = 10;
@@ -39,6 +39,7 @@ function Mobile() {
         blobWid = refWid;
         blobHei = refHei;    
         is_mobile = true;  
+        speed = containerWidth / 15;
     }
     //console.log(is_mobile)
     //console.log('x:'+ x, 'y:'+ y, 'bx:'+ bx, 'by:'+ by )
