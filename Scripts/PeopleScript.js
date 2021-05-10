@@ -155,7 +155,7 @@ function loadLotties() {
         });
         dot.addEventListener("mouseleave", (e) => {
             aniNom.stop();
-        // });
+        });
         // dot.addEventListener("transitionrun", () => {
         //     aniNom.setSpeed(aninmationSpeed);
         //     aniNom.play();
