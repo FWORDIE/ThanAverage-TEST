@@ -155,17 +155,17 @@ function loadLotties() {
         });
         dot.addEventListener("mouseleave", (e) => {
             aniNom.stop();
-        });
-        dot.addEventListener("transitionrun", () => {
-            aniNom.setSpeed(aninmationSpeed);
-            aniNom.play();
-            moving++;
-        });
-        dot.addEventListener("transitionend", () => {
-            aniNom.setSpeed(1);
-            aniNom.stop();
-            moving--;
-        });
+        // });
+        // dot.addEventListener("transitionrun", () => {
+        //     aniNom.setSpeed(aninmationSpeed);
+        //     aniNom.play();
+        //     moving++;
+        // });
+        // dot.addEventListener("transitionend", () => {
+        //     aniNom.setSpeed(1);
+        //     aniNom.stop();
+        //     moving--;
+        // });
         let invert = Math.floor(getRandomArbitrary(1, 3));
         if (invert == 1) {
             dot.className = "dot invert";
@@ -206,7 +206,7 @@ function setData(n){
 
 // Write Movement Data
 function writeData(){
-    requestAnimationFrame(() => {
+  
     for(n=0;n<100;n++){
         let dot = dots[n];
         dot.setAttribute("style","left:"+dotData[n][0]+"%; top:" +dotData[n][1]+ "%; transition-duration:" + dotData[n][2]+"; width:"+ dotData[n][3]+"%; z-index:"+dotData[n][6]+";");
@@ -214,7 +214,6 @@ function writeData(){
         dot.classList.add(dotData[n][7]|| "blue");
     }
     console.log("write")
-});
 
 
 } 
