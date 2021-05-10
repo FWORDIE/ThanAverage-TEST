@@ -423,9 +423,6 @@ ul {
   height: auto;
   position: absolute;
   overflow: visible;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  transform-box: fill-box;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
@@ -435,6 +432,7 @@ ul {
   transition-property: transform, top, left;
   transition-property: transform, top, left, -webkit-transform;
   pointer-events: auto;
+  will-change: transform, top, left;
 }
 
 .small {
@@ -462,6 +460,10 @@ button {
   padding: 5vw;
   text-align: center;
   z-index: 0;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
 }
 
 .textarea .Question {

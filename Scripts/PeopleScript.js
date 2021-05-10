@@ -21,6 +21,7 @@ let PeopleGen = false;
 let longestTime = 0;
 let aninmationSpeed = 3;
 let is_mobile = false;
+let dots = [];
 
 //console.log(containerHeight, containerWidth);
 
@@ -176,12 +177,17 @@ function loadLotties() {
             dotData[n][3] = 6 * sizeNum.toFixed(1);  
         }
         dotData[n][8] = People[svgNum][1]*dotData[n][3];
-        document.getElementById("container").appendChild(dot);
-        
+        dots[n] = dot;
+        //document.getElementById("container").appendChild(dot);
     }
     console.log(dotData);
     //var readywidth = document.getElementById("no100").offsetHeight;
+   
+    
     showResults(50, true, true);
+    for(n=0; n < dots.length; n++){
+        document.getElementById("container").appendChild(dots[n]);
+    }
     resultState = false;    
 }
 
@@ -200,18 +206,21 @@ function setData(n){
 
 // Write Movement Data
 function writeData(){
+ 
     for(n=0;n<100;n++){
-        let dot = document.getElementById("no"+(n+1));
+        let dot = dots[n];
         dot.setAttribute("style","left:"+dotData[n][0]+"%; top:" +dotData[n][1]+ "%; transition-duration:" + dotData[n][2]+"; width:"+ dotData[n][3]+"%; z-index:"+dotData[n][6]+";");
         dot.classList.remove("green","red","blue");
         dot.classList.add(dotData[n][7]|| "blue");
     }
     console.log("write")
 
+
 } 
 
 // Move People
 function movePeople(item, Arr, n, instant) {
+    
     let xData = Arr[n][0];
     let yData = Arr[n][1];
     let oldX = dotData[item][0];
@@ -377,20 +386,3 @@ function pointchoice(oldx, oldy, array, bin) {
     return [closeP, closet];
 }
 
-// Read Current XY
-function findXY(div) {
-    let el = div;
-    let st = window.getComputedStyle(el, null);
-    let tr =
-        st.getPropertyValue("-webkit-transform") ||
-        st.getPropertyValue("-moz-transform") ||
-        st.getPropertyValue("-ms-transform") ||
-        st.getPropertyValue("-o-transform") ||
-        st.getPropertyValue("transform");
-    let values = tr.split("(")[1];
-    values = values.split(")")[0];
-    values = values.split(",");
-    let x = values[4];
-    let y = values[5];
-    return [x, y];
-}
