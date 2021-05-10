@@ -460,10 +460,6 @@ button {
   padding: 5vw;
   text-align: center;
   z-index: 0;
-  -webkit-transition-property: opacity, -webkit-filter;
-  transition-property: opacity, -webkit-filter;
-  transition-property: opacity, filter;
-  transition-property: opacity, filter, -webkit-filter;
 }
 
 .textarea .Question {
@@ -564,6 +560,10 @@ button {
 .buttonbox #Suggest {
   background-color: #f2cc8f;
   margin: 20px;
+}
+
+.listbut {
+  margin-bottom: 40px !important;
 }
 
 #QuizArea {
@@ -677,11 +677,6 @@ svg {
   }
   .listbox {
     margin-top: 5vh;
-  }
-  .listbox .buttonbox #Suggest {
-    background-color: #f2cc8f;
-    margin-bottom: 20px;
-    margin-top: 0px;
   }
   .listbox .os-scrollbar-handle {
     background-color: #3d405b !important;
