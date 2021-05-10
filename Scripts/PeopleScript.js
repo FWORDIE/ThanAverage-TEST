@@ -206,7 +206,7 @@ function setData(n){
 
 // Write Movement Data
 function writeData(){
- 
+    requestAnimationFrame(() => {
     for(n=0;n<100;n++){
         let dot = dots[n];
         dot.setAttribute("style","left:"+dotData[n][0]+"%; top:" +dotData[n][1]+ "%; transition-duration:" + dotData[n][2]+"; width:"+ dotData[n][3]+"%; z-index:"+dotData[n][6]+";");
@@ -214,6 +214,7 @@ function writeData(){
         dot.classList.add(dotData[n][7]|| "blue");
     }
     console.log("write")
+});
 
 
 } 
