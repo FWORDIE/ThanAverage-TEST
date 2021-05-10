@@ -38,17 +38,13 @@ function TransTime() {
     }
     return TransTime + "ms";
 }
-// Fade In effect
+// Fade In effect TODO:
 function FadeIn() {
-    TextArea.style.opacity = "0.9";
-    TextArea.style.transitionDuration = TransTime();
-    TextArea.style.filter = "blur(0vw)";
+    TextArea.setAttribute("style","opacity:0.9; transition-duration:" + TransTime() + "; filter: blur(0vw)");
 }
-// Fade Out Effect
+// Fade Out Effect TODO:
 function FadeOut() {
-    TextArea.style.opacity = "0";
-    TextArea.style.transitionDuration = TransTime();
-    TextArea.style.filter = "blur(0.2vw)";
+    TextArea.setAttribute("style","opacity:0; transition-duration:" + TransTime() + "; filter: blur(0.2vw)");
 }
 
 // Start Button
@@ -59,7 +55,6 @@ function Start() {
 // Load a new Question in
 function loadQuestion() {
     FadeOut();
-    TextArea.style.opacity = "0";
     if (UsedQues.length == NumofQues) {
         setTimeout(NoQues, Math.round((longestTime * 1000) / 2));
     } else {
@@ -97,7 +92,7 @@ function Answer(type) {
     let QPcent = GenPcent(QNum);
     let LowQPcent = Math.round(GenPcent(QNum));
     showResults(LowQPcent, false, false);
-    setTimeout(() => {
+    setTimeout(() => { //TODO:
         FadeIn();
         RespBox.style.display = "block";
         Next.style.display = "block";
@@ -140,7 +135,7 @@ function GenPcent(Num) {
 }
 
 // Clear Styles Function
-function clearstyle() {
+function clearstyle() { //TODO:
     RespBox.style.display = "none";
     Next.style.display = "none";
     QuesBox.style.display = "block";

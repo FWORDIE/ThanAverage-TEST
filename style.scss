@@ -362,13 +362,11 @@ ul {
     height: auto;
     position: absolute;
     overflow: visible;
-    //width: 3vw;
-    transform-origin: center center;
-    transform-box: fill-box;
     transform: translate(-50%, -50%);
     transition-timing-function: cubic-bezier(.45,.05,.55,.95);
     transition-property: transform, top, left;
     pointer-events: auto;
+    will-change: transform, top, left;
 }
 .small {
     height: auto;
@@ -393,6 +391,7 @@ button {
     padding: 5vw;
     text-align: center;
     z-index: 0;
+    
 
     .Question {
         font-size: 2.5vw;
