@@ -156,16 +156,16 @@ function loadLotties() {
         dot.addEventListener("mouseleave", (e) => {
             aniNom.stop();
         });
-        // dot.addEventListener("transitionrun", () => {
-        //     aniNom.setSpeed(aninmationSpeed);
-        //     aniNom.play();
-        //     moving++;
-        // });
-        // dot.addEventListener("transitionend", () => {
-        //     aniNom.setSpeed(1);
-        //     aniNom.stop();
-        //     moving--;
-        // });
+        dot.addEventListener("transitionrun", () => {
+            aniNom.setSpeed(aninmationSpeed);
+            aniNom.play();
+            moving++;
+        });
+        dot.addEventListener("transitionend", () => {
+            aniNom.setSpeed(1);
+            aniNom.stop();
+            moving--;
+        });
         let invert = Math.floor(getRandomArbitrary(1, 3));
         if (invert == 1) {
             dot.className = "dot invert";
