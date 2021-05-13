@@ -77,7 +77,7 @@ function test1() {
 function reset() {
     longestTime = 0;
     for (let n = 0; n < 100; n++) {
-        dotData[n][7] = "";
+        dotData[n][7] = "#3d405b";
         movePeople(n, resetData, n);
     }
     writeData();
@@ -287,7 +287,11 @@ function writeData(){
   
     for(n=0;n<100;n++){
         let dot = dots[n];
-        gsap.to(dot, {duration: dotData[n][2], x:dotData[n][0], y:dotData[n][1], onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]});
+        let body = dots[n].querySelector('.cls-2')
+        let shadow = dots[n].querySelector('.cls-1')
+        gsap.to(dot, {duration: dotData[n][2], x:dotData[n][0], y:dotData[n][1], zIndex:dotData[n][6], onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]})
+        gsap.to([body, shadow],{duration: 0.1, fill:dotData[n][7]});
+
 
         
         // ,onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]
@@ -311,7 +315,7 @@ function walkstop(dot){
 function movePeople(item, Arr, n, instant) {
     let xOffset = ((dotData[item][3]/2)*containerPercentageWidth);
     let yOffset = ((dotData[item][3]*dotData[item][8]/2)*containerPercentageWidth)
-    console.log(xOffset,yOffset);
+    //console.log(xOffset,yOffset);
     let xData = (Arr[n][0])-xOffset;
     let yData = (Arr[n][1])-yOffset;
     let oldX = dotData[item][0];
@@ -326,7 +330,7 @@ function movePeople(item, Arr, n, instant) {
     dotData[item][5] = oldY;
     dotData[item][0] = xData;
     dotData[item][1] = yData;
-    dotData[item][6] = ((yData + (dotData[item][8]/2))*10).toFixed(0);
+    dotData[item][6] = (yData + yOffset).toFixed(0);
     //console.log(dotData[item]);
 }
 
@@ -369,7 +373,7 @@ function showResults(num, runaway, instant) {
 
             if (runaway == true) {
             } else {
-                dotData[n-1][7] = 'green';
+                dotData[n-1][7] = '#81b29a';
             }
             let closeP = pointchoice(oldx, oldy, pointsG, binG)[0];
             binG.push(closeP);
@@ -387,7 +391,7 @@ function showResults(num, runaway, instant) {
 
             if (runaway == true) {
             } else {
-                dotData[n-1][7] = 'red';
+                dotData[n-1][7] = '#e07a5f';
             }
             let closeP = pointchoice(oldx, oldy, pointsR, binR)[0];
             binR.push(closeP);
