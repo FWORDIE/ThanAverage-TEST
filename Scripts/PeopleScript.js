@@ -26,7 +26,7 @@ let longestTime = 0;
 let aninmationSpeed = 3;
 let is_mobile = false;
 let dots = [];
-let time = 0.15;
+let time = 0.1;
 
 
 //console.log(containerHeight, containerWidth);
