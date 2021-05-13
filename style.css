@@ -459,7 +459,7 @@ button {
   height: auto;
   max-height: 40%;
   width: 57%;
-  padding: 5vw;
+  padding: 10vh;
   text-align: center;
   z-index: 0;
 }
@@ -573,7 +573,7 @@ button {
 }
 
 .area {
-  padding: 3vw;
+  padding: 3vh;
 }
 
 .invert svg {

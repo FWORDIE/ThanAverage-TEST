@@ -17,6 +17,10 @@ function ResultsPage() {
 }
 
 function AboutPage() {
+    if(resultState == true){
+        reset();
+        resultState = false;
+    }
 
     FadeOut();
     setTimeout(LoadAboutPage, Math.round((longestTime * 1000) / 2));
@@ -27,6 +31,7 @@ function LoadAboutPage(){
         reset();
         ResultsPageOpen = false;
     }
+
     HideOthers(AboutArea);
     FadeIn();
 }

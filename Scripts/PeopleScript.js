@@ -4,7 +4,7 @@ gsap.registerPlugin(CSSRulePlugin, MorphSVGPlugin);
 
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = containerWidth / 5;
+let speed = 0.9*(containerWidth*0.2) ;
 let bias = 100;
 let x = 14;
 let y = 10;
@@ -25,6 +25,7 @@ let PeopleGen = false;
 let longestTime = 0;
 let aninmationSpeed = 3;
 let is_mobile = false;
+let is_small = false;
 let dots = [];
 let time = 0.15;
 let containerPercentageHeight = containerHeight/100;
@@ -47,7 +48,30 @@ function Mobile() {
         blobWid = refWid;
         blobHei = refHei;    
         is_mobile = true;  
-        speed = containerWidth / 5;
+       
+    }else if(containerHeight< 650){
+        x = 18;
+        y = 12;
+        t = 16;
+        bx = 12;
+        by = 8;
+        refWid = containerWidth / x;
+        refHei = containerHeight/ y;
+        blobWid = refWid;
+        blobHei = refHei; 
+        gsap.to('.textarea',{width:"66%","max-height":"66%"})
+        // x = 14;
+        // y = 14;
+        // t = 12;
+        // bx = 10;
+        // by = 8;
+        // refWid = containerWidth / x;
+        // refHei = containerHeight/ y;
+        // blobWid = refWid;
+        // blobHei = refHei; 
+        // gsap.to('.textarea',{width:"70%","max-height":"55%"})
+
+        is_small = true;  
     }
     //console.log(is_mobile)
     //console.log('x:'+ x, 'y:'+ y, 'bx:'+ bx, 'by:'+ by )
@@ -154,6 +178,8 @@ function loadLotties() {
         dotData[n][3] = 4 * sizeNum.toFixed(1);
         if(is_mobile == true){
             dotData[n][3] = 6 * sizeNum.toFixed(1);  
+        }else if(is_small==true){
+            dotData[n][3] = 3 * sizeNum.toFixed(1); 
         }
 
         gsap.to(dot, {width:`${dotData[n][3]}%`});
@@ -325,7 +351,7 @@ function movePeople(item, Arr, n, instant) {
     } else {
         s = speed;
     }
-    dotData[item][2] = travel(xData, yData, oldX, oldY, s);
+    dotData[item][2] = (travel(xData, yData, oldX, oldY, s));
     dotData[item][4] = oldX;
     dotData[item][5] = oldY;
     dotData[item][0] = xData;
@@ -415,6 +441,9 @@ function travel(newx, newy, oldx, oldy, speed) {
         longestTime = traveltime;
     }
     //console.log("long:" + longestTime);
+    if(traveltime<1 && speed !== Infinity){
+        traveltime += 1;
+    }
     return traveltime;
 }
 
