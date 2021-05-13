@@ -40,11 +40,11 @@ function TransTime() {
 }
 // Fade In effect TODO:
 function FadeIn() {
-    TextArea.setAttribute("style","opacity:0.9; transition-duration:" + TransTime() + "; filter: blur(0vw)");
+    TextArea.setAttribute("style","opacity:0.9; transition-duration:" + TransTime() + ";");// filter: blur(0vw)
 }
 // Fade Out Effect TODO:
 function FadeOut() {
-    TextArea.setAttribute("style","opacity:0; transition-duration:" + TransTime() + "; filter: blur(0.2vw)");
+    TextArea.setAttribute("style","opacity:0; transition-duration:" + TransTime() + ";");//  filter: blur(0.2vw)
 }
 
 // Start Button

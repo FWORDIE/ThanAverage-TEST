@@ -289,7 +289,7 @@ function writeData(){
         let dot = dots[n];
         let body = dots[n].querySelector('.cls-2')
         let shadow = dots[n].querySelector('.cls-1')
-        gsap.to(dot, {duration: dotData[n][2], x:dotData[n][0], y:dotData[n][1], zIndex:dotData[n][6], onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]})
+        gsap.to(dot, {duration: dotData[n][2], x:dotData[n][0], y:dotData[n][1], zIndex:dotData[n][6], ease:"power1.inOut", onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]})
         gsap.to([body, shadow],{duration: 0.1, fill:dotData[n][7]});
 
 
@@ -452,12 +452,18 @@ function randomPointOf(n, bias, val) {
     let nx = (n / spread) * xs;
     let xx = 0;
     let yy = 0;
+    let offsetY = 0;
+    if(is_mobile == true){
+        offsetY = refHei*1.5;
+    } else{
+        offsetY = refHei*1.2;
+    }
     if (val == 1) {
         xx = containerWidth - (Math.random() * xs + nx);
-        yy = (Math.random() * ys + ny) + refHei;
+        yy = (Math.random() * ys + ny) + (offsetY);
     } else {
         xx = (Math.random() * xs + nx);
-        yy = (Math.random() * ys + ny) + refHei;   
+        yy = (Math.random() * ys + ny) + (offsetY);   
     }
     
     return [xx.toFixed(1), yy.toFixed(1)];
