@@ -42,8 +42,8 @@ function Mobile() {
         t = 8;
         bx = 6;
         by = 8;
-        refWid = 100 / x;
-        refHei = 100 / y;
+        refWid = containerWidth / x;
+        refHei = containerHeight/ y;
         blobWid = refWid;
         blobHei = refHei;    
         is_mobile = true;  
