@@ -142,97 +142,13 @@ function loadLotties() {
         return;
     }
     for (let n = 0; n < 100; n++) {
-        // let dot = document.createElement("div");
-        // dot.className = "dot";
-        // let divNo = "no" + (n);
-        // dot.id = divNo;
-        // let svgNum = "SVG"+Math.floor(getRandomArbitrary(1, 2));
-        // dot.innerHTML = SVGs[svgNum](n);
-        // dots[n] = dot;
-        // let invert = Math.floor(getRandomArbitrary(1, 3));
-        // if (invert == 1) {
-        //     dot.className = "dot invert";
-        // } else {
-        // }
-        // let sizeNum = getRandomArbitrary(0.8, 1.2);
-        // dotData[n][3] = 4 * sizeNum.toFixed(1);
-        // if(is_mobile == true){
-        //     dotData[n][3] = 6 * sizeNum.toFixed(1);  
-        // }
-        // const S1 = dot.querySelector('.S1'),
-        //         S2 = dot.querySelector('.S2'),
-        //         S3 = dot.querySelector('.S3'),
-        //         E1 = dot.querySelector('.E1'),
-        //         E2 = dot.querySelector('.E2'),
-        //         E3 = dot.querySelector('.E3');
-
-
-
-        // const tl = gsap.timeline({
-        //     repeat: -1,
-        //     paused: true
-        //   });
-
-        //   tl.to(S1, {duration: time, ease: "power3.out", morphSVG:{ shape:S2, precompile: ['M54.5,60.2 C54.5,73.6 3,73 3,60.2 3,47.3 6.3,4 22.9,1.1 39.6,-1.7 54.5,46.7 54.5,60.2 z','M54.2,52.1 C54.2,65.5 2.7,73 2.7,60.1 2.7,47.2 -2.1,7.1 14.6,4.3 31.3,1.5 54.2,38.7 54.2,52.1 z']}})
-        //   .to(E1, {duration: time, ease: "power3.out", morphSVG:{ shape:E2, precompile:['M18.9,19.1 C20,19.1 20.8,20 20.8,21 20.8,22 20,23 18.9,23 17.8,23 17,22.1 17,21.1 17,20.1 17.8,19.1 18.9,19.1 zM32.5,18.2 C33.3,18.2 34,18.9 34,19.7 34,20.5 33.3,21.2 32.5,21.2 31.7,21.2 31,20.5 31,19.7 31,18.9 31.7,18.2 32.5,18.2 z','M15.1,21.8 C16.2,21.6 17.2,22.3 17.4,23.4 17.6,24.5 16.9,25.5 15.8,25.7 14.7,25.9 13.7,25.2 13.5,24.1 13.3,23 14,22 15.1,21.8 zM28.4,18.6 C29.2,18.5 30,19 30.1,19.8 30.2,20.6 29.7,21.4 28.9,21.5 28.1,21.6 27.3,21.1 27.2,20.3 27,19.6 27.6,18.8 28.4,18.6 z']}},`-=${time}`)
-        //   .to(S1, {duration: time/2, ease: "power1.out", morphSVG:{ shape:S1, precompile:['M54.2,52.1 C54.2,65.5 2.7,73 2.7,60.1 2.7,47.2 -2.1,7.1 14.6,4.3 31.3,1.5 54.2,38.7 54.2,52.1 z','M54.5,60.2 C54.5,73.6 3,73 3,60.2 3,47.3 6.3,4 22.9,1.1 39.6,-1.7 54.5,46.7 54.5,60.2 z']}})
-        //   .to(E1, {duration: time/2, ease: "power1.out", morphSVG:{ shape:E1, precompile:['M15.1,21.8 C16.2,21.6 17.2,22.3 17.4,23.4 17.6,24.5 16.9,25.5 15.8,25.7 14.7,25.9 13.7,25.2 13.5,24.1 13.3,23 14,22 15.1,21.8 zM28.4,18.6 C29.2,18.5 30,19 30.1,19.8 30.2,20.6 29.7,21.4 28.9,21.5 28.1,21.6 27.3,21.1 27.2,20.3 27,19.6 27.6,18.8 28.4,18.6 z','M18.9,19.1 C20,19.1 20.8,20 20.8,21 20.8,22 20,23 18.9,23 17.8,23 17,22.1 17,21.1 17,20.1 17.8,19.1 18.9,19.1 zM32.5,18.2 C33.3,18.2 34,18.9 34,19.7 34,20.5 33.3,21.2 32.5,21.2 31.7,21.2 31,20.5 31,19.7 31,18.9 31.7,18.2 32.5,18.2 z']}},`-=${time/2}`)
-        //   .to(S1, {duration: time, ease: "power3.out", morphSVG:{ shape:S3, precompile:['M54.5,60.2 C54.5,73.6 3,73 3,60.2 3,47.3 6.3,4 22.9,1.1 39.6,-1.7 54.5,46.7 54.5,60.2 z','M54.5,60.2 C54.5,73.6 3,65.6 3,52.7 3,39.8 15.9,7.1 32.5,4.2 49.2,1.3 54.5,46.7 54.5,60.2 z']}})
-        //   .to(E1, {duration: time, ease: "power3.out", morphSVG:{ shape:E3, precompile:['M18.9,19.1 C20,19.1 20.8,20 20.8,21 20.8,22 20,23 18.9,23 17.8,23 17,22.1 17,21.1 17,20.1 17.8,19.1 18.9,19.1 zM32.5,18.2 C33.3,18.2 34,18.9 34,19.7 34,20.5 33.3,21.2 32.5,21.2 31.7,21.2 31,20.5 31,19.7 31,18.9 31.7,18.2 32.5,18.2 z','M24.4,17.7 C25.5,17.9 26.1,19 25.9,20 25.7,21.1 24.6,21.7 23.6,21.5 22.5,21.3 21.9,20.2 22.1,19.2 22.3,18.2 23.3,17.5 24.4,17.7 zM37.9,19.8 C38.7,20 39.2,20.8 39,21.6 38.8,22.4 38,22.9 37.2,22.7 36.4,22.5 35.9,21.7 36.1,20.9 36.3,20.1 37.1,19.6 37.9,19.8 z']}},`-=${time}`)
-        //   .to(S1, {duration: time/2, ease: "power1.out", morphSVG:{ shape:S1, precompile:['M54.5,60.2 C54.5,73.6 3,65.6 3,52.7 3,39.8 15.9,7.1 32.5,4.2 49.2,1.3 54.5,46.7 54.5,60.2 z','M54.5,60.2 C54.5,73.6 3,73 3,60.2 3,47.3 6.3,4 22.9,1.1 39.6,-1.7 54.5,46.7 54.5,60.2 z']}})
-        //   .to(E1, {duration: time/2, ease: "power1.out", morphSVG:{ shape:E1, precompile:['M24.4,17.7 C25.5,17.9 26.1,19 25.9,20 25.7,21.1 24.6,21.7 23.6,21.5 22.5,21.3 21.9,20.2 22.1,19.2 22.3,18.2 23.3,17.5 24.4,17.7 zM37.9,19.8 C38.7,20 39.2,20.8 39,21.6 38.8,22.4 38,22.9 37.2,22.7 36.4,22.5 35.9,21.7 36.1,20.9 36.3,20.1 37.1,19.6 37.9,19.8 z','M18.9,19.1 C20,19.1 20.8,20 20.8,21 20.8,22 20,23 18.9,23 17.8,23 17,22.1 17,21.1 17,20.1 17.8,19.1 18.9,19.1 zM32.5,18.2 C33.3,18.2 34,18.9 34,19.7 34,20.5 33.3,21.2 32.5,21.2 31.7,21.2 31,20.5 31,19.7 31,18.9 31.7,18.2 32.5,18.2 z']}},`-=${time/2}`);
-        
-
-        // dot.addEventListener("mouseenter", (e) => {
-        //     tl.play();
-        // });
-        // dot.addEventListener("mouseleave", (e) => {
-        //     tl.pause(0);
-        // });
-
- 
-
-    
-
-        // dot.addEventListener('walkbeg', () => {
-        //     tl.play();
-        //     moving++;
-        // });
-        // dot.addEventListener("walkend", () => {
-        //     tl.pause(0);
-        //     moving--;
-        // });
-        //dotData[n][8] = People[svgNum][1]*dotData[n][3];
-                        
-        // container creation
         let dot = document.createElement("div");
         dot.className = "dot";
-        let divNo = "no" + (n + 1);
+        let divNo = "no" + (n);
         dot.id = divNo;
-        //movePeople(dot, intialArr, n, true);
-        let svgNum = Math.floor(getRandomArbitrary(0, 5));
-        let aniNom = bodymovin.loadAnimation({
-            name: divNo,
-            container: dot, // required
-            animationData: People[svgNum][0],
-            renderer: "svg", // required
-            loop: true, // optional
-            autoplay: false, // optional
-        });
-        dot.addEventListener('mouseenter', (e) => {
-            aniNom.play();
-        });
-        dot.addEventListener('mouseleave', (e) => {
-            aniNom.stop();
-        });
-        dot.addEventListener("walkbeg", () => {
-            aniNom.setSpeed(2);
-            aniNom.play();
-        });
-        dot.addEventListener("walkend", () => {
-            aniNom.setSpeed(2);
-            aniNom.stop();
-        });
+        let svgNum = "SVG"+Math.floor(getRandomArbitrary(1, 2));
+        dot.innerHTML = SVGs[svgNum](n);
+        dots[n] = dot;
         let invert = Math.floor(getRandomArbitrary(1, 3));
         if (invert == 1) {
             dot.className = "dot invert";
@@ -243,7 +159,105 @@ function loadLotties() {
         if(is_mobile == true){
             dotData[n][3] = 6 * sizeNum.toFixed(1);  
         }
-        dotData[n][8] = People[svgNum][1]*dotData[n][3];
+        gsap.to(dot, {width:`${dotData[n][3]}%`});
+        
+
+
+
+        const tl = gsap.timeline({
+            repeat: -1,
+            paused: true
+          });
+
+          tl.to(dot,{
+                duration: time, 
+                ease: "power3.out", 
+                rotation:-15,
+                transformOrigin:"0% 100%"
+            })
+            .to(dot,{
+                duration: time, 
+                ease: "power3.out", 
+                rotation:0,
+                transformOrigin:"0% 100%"
+            })
+            .to(dot,{
+                duration: time, 
+                ease: "power3.out", 
+                rotation:15,
+                transformOrigin:"100% 100%"
+            })
+            .to(dot,{
+                duration: time, 
+                ease: "power3.out", 
+                rotation:0,
+                transformOrigin:"100% 100%"
+            })
+        
+        
+        
+
+        dot.addEventListener("mouseenter", (e) => {
+            tl.play();
+        });
+        dot.addEventListener("mouseleave", (e) => {
+            tl.pause(0);
+        });
+
+ 
+
+    
+
+        dot.addEventListener('walkbeg', () => {
+            tl.play();
+            moving++;
+        });
+        dot.addEventListener("walkend", () => {
+            tl.pause(0);
+            moving--;
+        });
+        //dotData[n][8] = People[svgNum][1]*dotData[n][3];
+                        
+        // container creation
+        // let dot = document.createElement("div");
+        // dot.className = "dot";
+        // let divNo = "no" + (n + 1);
+        // dot.id = divNo;
+        // //movePeople(dot, intialArr, n, true);
+        // let svgNum = Math.floor(getRandomArbitrary(0, 5));
+        // let aniNom = bodymovin.loadAnimation({
+        //     name: divNo,
+        //     container: dot, // required
+        //     animationData: People[svgNum][0],
+        //     renderer: "svg", // required
+        //     loop: true, // optional
+        //     autoplay: false, // optional
+        // });
+        // dot.addEventListener('mouseenter', (e) => {
+        //     aniNom.play();
+        // });
+        // dot.addEventListener('mouseleave', (e) => {
+        //     aniNom.stop();
+        // });
+        // // dot.addEventListener("walkbeg", () => {
+        // //     aniNom.setSpeed(2);
+        // //     aniNom.play();
+        // // });
+        // // dot.addEventListener("walkend", () => {
+        // //     aniNom.setSpeed(2);
+        // //     aniNom.stop();
+        // // });
+        // let invert = Math.floor(getRandomArbitrary(1, 3));
+        // if (invert == 1) {
+        //     dot.className = "dot invert";
+        // } else {
+        // }
+        // let sizeNum = getRandomArbitrary(0.8, 1.2);
+        // dotData[n][3] = 4 * sizeNum.toFixed(1);
+        // if(is_mobile == true){
+        //     dotData[n][3] = 6 * sizeNum.toFixed(1);  
+        // }
+        // dotData[n][8] = People[svgNum][1]*dotData[n][3];
         dots[n] = dot;
         //document.getElementById("container").appendChild(dot);
     }
@@ -283,7 +297,7 @@ function writeData(){
         // walk(dot);
         let XP = (containerWidth/100)*dotData[n][0],
             YP = (containerHeight/100)*dotData[n][1];
-        gsap.to(dot, {duration: dotData[n][2], x:XP, y:YP, width:`${dotData[n][3]}%`,onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]});
+        gsap.to(dot, {duration: dotData[n][2], x:XP, y:YP, onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]});
         //dot.dispatchEvent(walkbeg);
         
         // ,onStart:walkstart, onStartParams:[dot], onComplete: walkstop, onCompleteParams:[dot]
