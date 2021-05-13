@@ -584,6 +584,7 @@ button {
 
 svg {
   display: block;
+  overflow: visible;
 }
 
 .red
@@ -813,5 +814,10 @@ svg {
     top: -2px;
     right: -3px;
   }
+}
+
+.cls-1 {
+  fill-opacity: 0.1;
+  fill: #3d405b;
 }
 /*# sourceMappingURL=style.css.map */

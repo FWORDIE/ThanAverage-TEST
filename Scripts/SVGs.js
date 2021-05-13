@@ -1,24 +1,8 @@
-var SVGs = {
-    SVG1: function SVG1(n){
-        return `<svg version="1.1" id="L${n}" class="person" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 57 74" style="enable-background:new 0 0 57 74;" xml:space="preserve">
-            <style type="text/css">
-            .st0{fill:#C4C4C4;fill-opacity:0.1;}
-            .st1{fill:#3D405B;stroke:#F4F1DE;}
-            .st2{fill:#F4F1DE;}
-            </style>
-            <path id="Shadow" class="st0" d="M28.5,54C44.2,54,57,58.5,57,64S44.2,74,28.5,74S0,69.5,0,64S12.8,54,28.5,54z"/>
-            <path id="S${n}a" class="st1 S1" d="M54.5,60.2C54.5,73.6,3,73,3,60.2C3,47.3,6.3,4,22.9,1.1C39.6-1.7,54.5,46.7,54.5,60.2z"/>
-            <path id="S${n}b" style="visibility:hidden;" class="st1 S2" d="M54.2,52.1c0,13.4-51.5,20.9-51.5,8c0-12.9-4.8-53,11.9-55.8C31.3,1.5,54.2,38.7,54.2,52.1z"/>
-            <path id="S${n}c" style="visibility:hidden;" class="st1 S3" d="M54.5,60.2C54.5,73.6,3,65.6,3,52.7C3,39.8,15.9,7.1,32.5,4.2C49.2,1.3,54.5,46.7,54.5,60.2z"/>
-            <path id="E${n}a" class="st2 E1" d="M18.9,19.1c1.1,0,1.9,0.9,1.9,1.9S20,23,18.9,23s-1.9-0.9-1.9-1.9S17.8,19.1,18.9,19.1z M32.5,18.2
-            c0.8,0,1.5,0.7,1.5,1.5s-0.7,1.5-1.5,1.5S31,20.5,31,19.7S31.7,18.2,32.5,18.2z"/>
-            <path id="E${n}b" style="visibility:hidden;" class="st2 E2" d="M15.1,21.8c1.1-0.2,2.1,0.5,2.3,1.6c0.2,1.1-0.5,2.1-1.6,2.3c-1.1,0.2-2.1-0.5-2.3-1.6
-            C13.3,23,14,22,15.1,21.8z M28.4,18.6c0.8-0.1,1.6,0.4,1.7,1.2c0.1,0.8-0.4,1.6-1.2,1.7s-1.6-0.4-1.7-1.2
-            C27,19.6,27.6,18.8,28.4,18.6z"/>
-            <path id="E${n}c" style="visibility:hidden;" class="st2 E3" d="M24.4,17.7c1.1,0.2,1.7,1.3,1.5,2.3c-0.2,1.1-1.3,1.7-2.3,1.5c-1.1-0.2-1.7-1.3-1.5-2.3
-            C22.3,18.2,23.3,17.5,24.4,17.7z M37.9,19.8c0.8,0.2,1.3,1,1.1,1.8s-1,1.3-1.8,1.1c-0.8-0.2-1.3-1-1.1-1.8
-            C36.3,20.1,37.1,19.6,37.9,19.8z"/>
-            </svg>`
-    }
-};
+var SVGs = [
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 74.5"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,53.93c38-.27,38,20.83,0,20.57C-9.5,74.76-9.5,53.66,28.5,53.93Z"/><path id="S1" class="cls-2" d="M53.68,62.31C53.13,74.5,4.24,72.89,4.24,61.24,4.24,42.37,7.13,1,30.24.5,52,.5,54.44,45.25,53.68,62.31Z"/><path id="E1" class="cls-3" d="M19.36,15.35a2,2,0,1,1-1.95,2A2,2,0,0,1,19.36,15.35ZM31.67,17.6a1.53,1.53,0,1,0-1.52,1.53A1.52,1.52,0,0,0,31.67,17.6Z"/></g></g></svg>`, 1.31],
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 65.71"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,45.14c38-.27,38,20.83,0,20.57C-9.5,66-9.5,44.87,28.5,45.14Z"/><path id="S1" class="cls-2" d="M53.68,53.52c0,12.2-49.44,10.58-49.44-1.07C4.24,35.92,16.1.5,30.15.5,43,.5,53.71,38.1,53.68,53.52Z"/><path id="E1" class="cls-3" d="M37.16,18a1.95,1.95,0,1,1,1.45-2.35A1.95,1.95,0,0,1,37.16,18Zm-12.5.63a1.53,1.53,0,1,0,1.14-1.83A1.54,1.54,0,0,0,24.66,18.67Z"/></g></g></svg>`, 1.15],
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 106.04"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,85.47c38-.26,38,20.84,0,20.57C-9.5,106.3-9.5,85.2,28.5,85.47Z"/><path id="S1" class="cls-2" d="M53.68,93.85C53.13,106,4.24,104.44,4.24,92.78,4.24,73.92,12.06,1,35.17.5,56.94.5,54.44,76.79,53.68,93.85Z"/><path id="E1" class="cls-3" d="M28.3,17.54a2,2,0,1,1-1.95,1.95A1.94,1.94,0,0,1,28.3,17.54Zm8.54,2.25a2.25,2.25,0,1,0,2.24-2.25A2.24,2.24,0,0,0,36.84,19.79Z"/></g></g></svg>`, 1.86],
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 98.68"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,78.1c38-.26,38,20.84,0,20.57C-9.5,98.94-9.5,77.84,28.5,78.1Z"/><path id="S1" class="cls-2" d="M53.68,86.49C53.13,98.68,4.24,97.07,4.24,85.41,4.24,66.55,18.59.5,31.66.5,44.47.5,54.44,69.42,53.68,86.49Z"/><path id="E1" class="cls-3" d="M27.1,15.35a1.36,1.36,0,1,1-1.36,1.36A1.36,1.36,0,0,1,27.1,15.35Zm6,1.57a1.58,1.58,0,1,0,1.57-1.57A1.57,1.57,0,0,0,33.08,16.92Z"/></g></g></svg>`, 1.73],
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 84.51"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,63.93c38-.26,38,20.84,0,20.57C-9.5,84.77-9.5,63.67,28.5,63.93Z"/><path id="S1" class="cls-2" d="M53.68,72.32C54.19,84.51,4.24,82.9,4.24,71.24,4.24,63.93,15.9.5,29,.5,41.79.5,53.32,63.93,53.68,72.32Z"/><path id="E1" class="cls-3" d="M24.58,24.83a1.37,1.37,0,1,1-1.36,1.37A1.37,1.37,0,0,1,24.58,24.83Zm6,1.57a1.58,1.58,0,1,0,1.58-1.57A1.58,1.58,0,0,0,30.56,26.4Z"/></g></g></svg>`, 1.48],
+    [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 65.75"><defs><style> .cls-2{fill:#3d405b;stroke:#f4f1de;}.cls-3{fill:#f4f1de;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path id="Shadow" class="cls-1" d="M28.5,45.17c38-.26,38,20.84,0,20.58C-9.5,66-9.5,44.91,28.5,45.17Z"/><path id="S1" class="cls-2" d="M52.56,52.66c0,12.43-47.64,11.91-47.64,0C3.61-20.08,45.34-13.62,52.56,52.66Z"/><path id="E1" class="cls-3" d="M18.9,13.32c2.52,0,2.52,3.93,0,3.9S16.37,13.28,18.9,13.32Zm13.63-.9a1.5,1.5,0,0,1,0,3A1.5,1.5,0,0,1,32.53,12.42Z"/></g></g></svg>`, 1.15]
+]

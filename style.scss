@@ -490,6 +490,7 @@ button {
 }
 svg {
     display: block;
+    overflow: visible;
 }
 .red {
     //background-color: $red;
@@ -730,4 +731,7 @@ svg {
     }
 }
 }
-  
+  .cls-1{
+      fill-opacity: 0.1 ;
+      fill: #3d405b;
+  }

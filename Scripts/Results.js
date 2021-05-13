@@ -24,7 +24,7 @@ function AboutPage() {
 
 function LoadAboutPage(){
     if(ResultsPageOpen == true){
-        pageSetUp();
+        reset();
         ResultsPageOpen = false;
     }
     HideOthers(AboutArea);
@@ -35,7 +35,8 @@ function LoadAboutPage(){
 function QuesBack(){
     HideOthers(IntroArea);
     document.getElementById('Results').innerText = "See Results";
-    pageSetUp()
+    reset();
+    FadeIn();
 
 }
 
