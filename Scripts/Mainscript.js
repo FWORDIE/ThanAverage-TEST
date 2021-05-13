@@ -9,7 +9,7 @@ document.onload = pageSetUp();
 function pageSetUp() {
     generateStartingGrid();
     loadLotties();
-    let readywidth = document.getElementById("no100").offsetHeight;
+    let readywidth = document.getElementById("no99").offsetHeight;
     wait(readywidth, 0);
     FadeIn();
     GetDataBase();
