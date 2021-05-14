@@ -8,10 +8,11 @@ var client = new faunadb.Client({
     domain: "db.fauna.com",
     scheme: "https",
 });
+
 // Load DataBase from Fauna
 function GetDataBase() {
     NoCalls ++;
-    console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
+    logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
     client
         .query(
             q.Paginate(q.Match(q.Index("AllDemQuestions")))
@@ -20,20 +21,15 @@ function GetDataBase() {
 
         .then((ret) => {
             questions = ret.data;
-            console.log(questions);
+            logger('GetDataBase',questions);
         })
         .catch((err) => console.error("Error: %s", err));
-}
-
-// Test Button
-function test4() {
-    console.log("high" + GetDataBase());
 }
 
 // Update Fauna DataBase
 function UpdateDataBase(Num, Answer) {
     NoPosts ++;
-    console.log('Calls: ' + NoCalls + ", Posts: " + NoPosts)
+    logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
     if(Answer == 'yes'){
         client
         .query(
@@ -58,7 +54,7 @@ function UpdateDataBase(Num, Answer) {
             )
         )
         )
-        .then((ret) => console.log(ret))
+        .then((ret) => logger('UpdateDataBase',ret))
         .catch((err) => console.error("Error: %s", err));
     }else{
         client
@@ -84,7 +80,7 @@ function UpdateDataBase(Num, Answer) {
             )
         )
         )
-        .then((ret) => console.log(ret))
+        .then((ret) => logger('UpdateDataBase',ret))
         .catch((err) => console.error("Error: %s", err));
     }
     

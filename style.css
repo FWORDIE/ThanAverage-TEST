@@ -173,6 +173,7 @@ html, body {
   width: 90%;
   z-index: 999;
   padding-top: 30px;
+  pointer-events: none;
 }
 
 .navbox h1 {
@@ -180,6 +181,15 @@ html, body {
   font-weight: 500;
   margin: 0px;
   font-size: 3vw;
+  pointer-events: all;
+}
+
+.navbox p {
+  pointer-events: all;
+}
+
+.navbox p:hover {
+  text-decoration: underline;
 }
 
 .navbox .navItem {
@@ -217,14 +227,6 @@ html, body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-
-.navbox .navItem:first-of-type:hover {
-  text-decoration: underline;
-}
-
-.navbox .navItem:last-of-type:hover {
-  text-decoration: underline;
 }
 
 .navbox .navItem:first-child > span {
@@ -366,6 +368,9 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#Fading {
   opacity: 0;
   -webkit-transition-property: opacity, -webkit-filter;
   transition-property: opacity, -webkit-filter;
@@ -373,6 +378,15 @@ ul {
   transition-property: opacity, filter, -webkit-filter;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .buttons {
@@ -587,41 +601,6 @@ svg {
   overflow: visible;
 }
 
-.red
-> svg:nth-child(1)
-> g:nth-child(2)
-> g:nth-child(2)
-> g:nth-child(1)
-> path:nth-child(1) {
-  fill: #e07a5f;
-}
-
-.green
-> svg:nth-child(1)
-> g:nth-child(2)
-> g:nth-child(2)
-> g:nth-child(1)
-> path:nth-child(1) {
-  fill: #81b29a;
-}
-
-.yellow
-> svg:nth-child(1)
-> g:nth-child(2)
-> g:nth-child(1)
-> g:nth-child(1)
-> path:nth-child(1) {
-  fill: #f2cc8f;
-}
-
-.redtext {
-  color: #e07a5f;
-}
-
-.greentext {
-  color: #81b29a;
-}
-
 @media only screen and (max-width: 760px) {
   #some-element {
     display: none;
@@ -819,5 +798,14 @@ svg {
 .cls-1 {
   fill-opacity: 0.1;
   fill: #3d405b;
+}
+
+.cls-2 {
+  fill: #3d405b;
+  stroke: #f4f1de;
+}
+
+.cls-3 {
+  fill: #f4f1de;
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,7 +8,7 @@ const PercArea = document.getElementById("Percent");
 const YesArea = document.getElementById("Yes");
 const NoArea = document.getElementById("No");
 const NextArea = document.getElementById("Next");
-const TextArea = document.getElementById("mainer");
+const  fadeArea = document.getElementById("Fading");
 const IntroArea = document.getElementById("IntroArea");
 const QuizArea = document.getElementById("QuizArea");
 const ListBox = document.getElementById("ListBox");
@@ -25,7 +25,7 @@ function NewQnum() {
         NewQnum();
     } else {
         UsedQues.push(QNum);
-        console.log(UsedQues);
+        logger('NewQnum(usedArr',UsedQues);
         return QNum;
     }
 }
@@ -40,11 +40,11 @@ function TransTime() {
 }
 // Fade In effect TODO:
 function FadeIn() {
-    TextArea.setAttribute("style","opacity:0.9; transition-duration:" + TransTime() + ";");// filter: blur(0vw)
+     fadeArea.setAttribute("style","opacity:0.9; transition-duration:" + TransTime() + ";");// filter: blur(0vw)
 }
 // Fade Out Effect TODO:
 function FadeOut() {
-    TextArea.setAttribute("style","opacity:0; transition-duration:" + TransTime() + ";");//  filter: blur(0.2vw)
+     fadeArea.setAttribute("style","opacity:0; transition-duration:" + TransTime() + ";");//  filter: blur(0.2vw)
 }
 
 // Start Button
@@ -65,8 +65,8 @@ function loadQuestion() {
 // No More Questions
 function NoQues() {
     HideOthers(QuizArea);
-    clearstyle();
-    QuizArea.innerHTML = '	<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Suggest" href="mailto:thanaverage@mildlyupset.com">Suggest Questions</a><a class="linkbutton" href="https://www.fredwordie.com/"><div class="button" id="Start">See my other projects</div></a></div>';
+    clearstyle([QuesBox,YesArea,NoArea]);
+    QuizArea.innerHTML = '	<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Suggest" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</a><a class="linkbutton" href="https://www.fredwordie.com/"><div class="button" id="Start">See my other projects</div></a></div>';
     FadeIn();
 }
 
@@ -75,9 +75,10 @@ function NewQues() {
 
     HideOthers(QuizArea);
 
-    clearstyle();
+    clearstyle([QuesBox,YesArea,NoArea]);
     Qnum = NewQnum();
-    console.log(questions[QNum]);
+    logger('NewQues',questions[QNum]);
+
     QNumArea.innerText = "Q" + questions[QNum][0];
     QuesArea.innerText = questions[QNum][1];
     YesArea.innerText = "Yes, " + questions[QNum][2];
@@ -94,34 +95,25 @@ function Answer(type) {
     showResults(LowQPcent, false, false);
     setTimeout(() => { //TODO:
         FadeIn();
-        RespBox.style.display = "block";
-        Next.style.display = "block";
-        QuesBox.style.display = "none";
-        YesArea.style.display = "none";
-        NoArea.style.display = "none";
+        clearstyle([RespBox, Next]);
         QNumArea.innerText = questions[QNum][6] + " Responses";
 
         if (type == "yes") {
             PercArea.innerText = LowQPcent + "%";
             RespArea.innerText = questions[QNum][4];
-            PercArea.classList.add("greentext");
-            RespArea.classList.add("greentext");
+            gsap.to([PercArea,RespArea],{color:'#81b29a', duration:0})
             questions[QNum][7]++;
-            console.log("yes");
             UpdateDataBase(Qnum+1, "yes");
         } else {
             PercArea.innerText = 100 - LowQPcent + "%";
             RespArea.innerText = questions[QNum][5]
-            PercArea.classList.add("redtext");
-            RespArea.classList.add("redtext");
+            gsap.to([PercArea,RespArea],{color:'#e07a5f', duration:0})
             questions[QNum][8]++;
-            console.log("no");
             UpdateDataBase(Qnum+1, "no");
         }
+        logger('Answer',type);
+        logger('Answer',[questions[QNum],QPcent]);
 
-        console.log(questions[QNum]);
-
-        console.log(QPcent);
     }, Math.round((longestTime * 1000) / 2));
 
     
@@ -135,16 +127,10 @@ function GenPcent(Num) {
 }
 
 // Clear Styles Function
-function clearstyle() { //TODO:
-    RespBox.style.display = "none";
-    Next.style.display = "none";
-    QuesBox.style.display = "block";
-    YesArea.style.display = "block";
-    NoArea.style.display = "block";
-    PercArea.classList.remove("redtext");
-    RespArea.classList.remove("redtext");
-    PercArea.classList.remove("greentext");
-    RespArea.classList.remove("greentext");
+function clearstyle(keep) { //TODO:
+    gsap.to([RespBox,Next,QuesBox,YesArea,NoArea],{display:'none', duration:0});
+    gsap.to(keep,{display:'block', duration:0});
+    gsap.to([PercArea,RespArea],{color:'#3e3b3b', duration:0})
 }
 
 // Next Question
@@ -152,3 +138,16 @@ function nextQues() {
     loadQuestion();
     reset();
 }
+
+// RespBox.style.display = "block";
+// Next.style.display = "block";
+// QuesBox.style.display = "none";
+// YesArea.style.display = "none";
+// NoArea.style.display = "none";
+
+// RespBox.style.display = "none";
+// Next.style.display = "none";
+// QuesBox.style.display = "block";
+// YesArea.style.display = "block";
+// NoArea.style.display = "block";
+

@@ -15,5 +15,10 @@ function pageSetUp() {
     GetDataBase();
 }
 
+function logger(func,thing){
+    console.log(`${func} whispers:`);
+    console.log(thing);
+}
+
 
 

@@ -12,23 +12,18 @@
 	<meta property="og:description" content="Test your GDPR skills by speed running a cookie consent banner" />
 	<meta property="og:image" content="https://i.ibb.co/0XRj5Bw/header-img.png" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.css" integrity="sha512-Ho1L8FTfzcVPAlvfkL1BV/Lmy1JDUVAP82/LkhmKbRX5PnQ7CNDHAUp2GZe7ybBpovS+ssJDf+SlBOswrpFr8g==" crossorigin="anonymous" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+	<link rel="preload" href="fonts/Prociono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/CormorantGaramond-Medium.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/CormorantGaramond-Light.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/TheanoDidot-Regular.woff2" as="font" type="font/woff2" crossorigin>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js" integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw==" crossorigin="anonymous"></script>
 	<script src="/Scripts/list.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb-min.js"></script>
 	<script src="/Scripts/Database.js"></script>
-	<!-- <link rel="preload" href="fonts/Prociono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CormorantGaramond-Medium.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/CormorantGaramond-Light.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/TheanoDidot-Regular.woff2" as="font" type="font/woff2" crossorigin> -->
-	<script src="/People SVGS/People.js"></script>
 	<script src="/Scripts/gsap.min.js"></script>
 	<script src="/Scripts/CSSRulePlugin.min.js"></script>
 	<script src="/Scripts/MorphSVGPlugin.min.js"></script>
 	<script src="/Scripts/SVGs.js"></script>
-
-
-	<!-- <script data-main="Scripts/Mainscript" src="Scripts/require.js"></script> -->
 </head>
 <body>
 
@@ -40,103 +35,101 @@
 
 	
 	<div id="mainer">
+		<div id="Fading">
+			<div class="listbox" id="ListBox">
+				<div class="listarea" id="ListArea">
+					<div class="topgrad"></div>
+					<div class="botgrad"></div>
+					<div class="sortarea" id="">
+						<div class="PercButBox sorter">	
+							<a class="sorter" >
+								Sort By:
+							</a>
+						</div>	
+						<div class="PercButBox ">	
+							<a class="sort" data-sort="Percent" data-default-order='asc' >
+								Agreement
+							</a>
+						</div>	
+						<div class="RespButBox ">
+							<a class="sort" data-sort="Responses" data-default-order='desc' >
+								Responses
+							</a>
+						</div>	
+						<div class="QuesButBox ">
+							<a class="sort" data-sort="Question">
+								Question
+							</a>
+						</div>	
 		
-		<div class="listbox" id="ListBox">
-			<div class="listarea" id="ListArea">
-				<div class="topgrad"></div>
-				<div class="botgrad"></div>
-				<div class="sortarea" id="">
-					<div class="PercButBox sorter">	
-						<a class="sorter" >
-							Sort By:
-						</a>
-					</div>	
-					<div class="PercButBox ">	
-						<a class="sort" data-sort="Percent" data-default-order='asc' >
-							Agreement
-						</a>
-					</div>	
-					<div class="RespButBox ">
-						<a class="sort" data-sort="Responses" data-default-order='desc' >
-							Responses
-						</a>
-					</div>	
-					<div class="QuesButBox ">
-						<a class="sort" data-sort="Question">
-							Question
-						</a>
-					</div>	
-	
-				</div>
-				<div id="List">
-					<ul class="list">
-	
-					</ul>
-					<div class="buttonbox">
-						<a class="button listbut" id="Suggest" href="mailto:thanaverage@mildlyupset.com">
-						Suggest Questions
-						</a>	
+					</div>
+					<div id="List">
+						<ul class="list">
+		
+						</ul>
+						<div class="buttonbox">
+							<a class="button listbut" id="Suggest" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">
+							Suggest Questions
+							</a>	
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="textarea" id="TextArea">
-			<div id="IntroArea" class="area">
-				<p id="IntroText" class="IntroText">
-					Imagine you are in a room with 100 random strangers, that are similiar to your peer group. 
-				</p>
-				<p id="IntroText" class="IntroText">
-					Knowing nothing about them answer the following questions by assessing yourself.
-				</p>
-				<div class="buttonbox">
-					<div class="button" onclick="Start()" id="Start">
-					Compare yourself to the them
-					</div>	
-				</div>
-			</div>
-				<div id="AboutArea" class="area">
+			<div class="textarea" id="TextArea">
+				<div id="IntroArea" class="area">
 					<p id="IntroText" class="IntroText">
-						ThanAverage is a small unscientific experiment investigating how we value ourselves and compare ourselves to each other.
+						Imagine you are in a room with 100 random strangers, that are similiar to your peer group. 
 					</p>
 					<p id="IntroText" class="IntroText">
-						Built badly by <a href="https://www.fredwordie.com/" class="link">Fred Wordie</a>
+						Knowing nothing about them answer the following questions by assessing yourself.
 					</p>
 					<div class="buttonbox">
 						<div class="button" onclick="Start()" id="Start">
-							Answer Questions
-						</div>
-						<div class="button" onclick="ResultsPage()" id="Start">
-							See Results
-						</div>
-						<a class="button" href="mailto:thanaverage@mildlyupset.com" id="Start">
-							Suggest Questions
-						</a>		
+						Compare yourself to the them
+						</div>	
 					</div>
 				</div>
-			<div id="QuizArea" class="area">
-				<p id="QNum" class="QNum">Oh No</p>
-				<h2 id="Question" class="Question"><span id="QuesCopy"></span> than average?</h2>
-				<h2 id="Response" class="Question"><span id="Percent"></span> of participants also think they <span id="RespCopy"></span> than average.</h2>
-				<div class="buttonbox">
-					<div class="button" id="Yes" onclick="Answer('yes')">
-					Yes, I am beautiful
+					<div id="AboutArea" class="area">
+						<p id="IntroText" class="IntroText">
+							ThanAverage is a small unscientific experiment investigating how we value ourselves and compare ourselves to each other.
+						</p>
+						<p id="IntroText" class="IntroText">
+							Built badly by <a href="https://www.fredwordie.com/" class="link">Fred Wordie</a>
+						</p>
+						<div class="buttonbox">
+							<div class="button" onclick="Start()" id="Start">
+								Answer Questions
+							</div>
+							<div class="button" onclick="ResultsPage()" id="Start">
+								See Results
+							</div>
+							<a class="button" href="mailto:thanaverage@mildlyupset.com" id="Start">
+								Suggest Questions
+							</a>		
+						</div>
 					</div>
-					<div class="button" onclick="Answer('no')" id="No">
-					No, I am ugly
+				<div id="QuizArea" class="area">
+					<p id="QNum" class="QNum">Oh No</p>
+					<h2 id="Question" class="Question"><span id="QuesCopy"></span> than average?</h2>
+					<h2 id="Response" class="Question"><span id="Percent"></span> of participants also think they <span id="RespCopy"></span> than average.</h2>
+					<div class="buttonbox">
+						<div class="button" id="Yes" onclick="Answer('yes')">
+						Yes, I am beautiful
+						</div>
+						<div class="button" onclick="Answer('no')" id="No">
+						No, I am ugly
+						</div>
+						<div class="button" onclick="nextQues()" id="Next">
+						Next question
+						</div>	
 					</div>
-					<div class="button" onclick="nextQues()" id="Next">
-					Next question
-					</div>	
 				</div>
 			</div>
 		</div>
-
 	</div>
 
     <div id="container">
 		<div id="some-element"></div>
-		<div id="some-element2"></div>
     </div>
 
 	<script src="Scripts/questions.js"></script>

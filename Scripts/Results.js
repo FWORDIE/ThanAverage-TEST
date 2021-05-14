@@ -119,10 +119,6 @@ function GenResultsArray() {
 }
 
 function HideOthers(Box){
-    ListBox.style.display = "none";
-    IntroArea.style.display = "none";
-    QuizArea.style.display = "none";
-    AboutArea.style.display = "none";
-    Box.style.display = "block";
-    
+    gsap.to([ListBox,IntroArea,QuizArea,AboutArea],{display:'none', duration:0});
+    gsap.to(Box,{display:'block', duration:0})
 }

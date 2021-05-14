@@ -171,11 +171,19 @@ html, body {
     width: 90%;
     z-index: 999;
     padding-top: 30px;
+    pointer-events: none;
     h1 {
         font-family: 'Cormorant Garamond';
         font-weight: 500;
         margin: 0px;
         font-size: 3vw;
+        pointer-events: all;
+    }
+    p{
+        pointer-events: all;
+    }
+    p:hover{
+        text-decoration: underline;
     }
     .navItem {
             font-family: 'Cormorant Garamond';
@@ -198,12 +206,12 @@ html, body {
     .navItem:last-of-type{
         justify-content: flex-end;
     }
-    .navItem:first-of-type:hover{
-        text-decoration: underline;
-    }
-    .navItem:last-of-type:hover{
-        text-decoration: underline;
-    }
+    // .navItem:first-of-type:hover{
+    //     text-decoration: underline;
+    // }
+    // .navItem:last-of-type:hover{
+    //     text-decoration: underline;
+    // }
     
     .navItem:first-child > span { 
         justify-content: right;
@@ -320,10 +328,17 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#Fading{
     opacity: 0;
     transition-property: opacity, filter;
     transition-timing-function: ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .buttons {
     height: 10vh;
     width: 100%;
@@ -492,51 +507,7 @@ svg {
     display: block;
     overflow: visible;
 }
-.red {
-    //background-color: $red;
-}
-.red
-    > svg:nth-child(1)
-    > g:nth-child(2)
-    > g:nth-child(2)
-    > g:nth-child(1)
-    > path:nth-child(1) {
-    fill: $red;
-}
-.green {
-    //background-color: $green;
-}
-.green
-    > svg:nth-child(1)
-    > g:nth-child(2)
-    > g:nth-child(2)
-    > g:nth-child(1)
-    > path:nth-child(1) {
-    fill: $green;
-}
 
-.yellow
-    > svg:nth-child(1)
-    > g:nth-child(2)
-    > g:nth-child(1)
-    > g:nth-child(1)
-    > path:nth-child(1) {
-    fill: $yellow;
-}
-// .svg{
-//     -moz-transform: scale(-1, 1);
-//     -webkit-transform: scale(-1, 1);
-//     -o-transform: scale(-1, 1);
-//     -ms-transform: scale(-1, 1);
-//     transform: scale(-1, 1);
-// }
-
-.redtext {
-    color: $red;
-}
-.greentext {
-    color: $green;
-}
 
 @media only screen and (max-width: 760px) {
     #some-element { 
@@ -585,13 +556,13 @@ svg {
       padding-top: 3vh;
       h1 {
         font-family: 'Cormorant Garamond';
-    font-weight: 300;
+        font-weight: 300;
         margin: 0px;
         font-size: 7vw;
     }
     .navItem {
             font-family: 'Cormorant Garamond';
-    font-weight: 500;
+        font-weight: 500;
         font-size: 4vw;
         margin: 0px;
      
@@ -734,5 +705,13 @@ svg {
   .cls-1{
       fill-opacity: 0.1 ;
       fill: #3d405b;
+  }
+  .cls-2 {
+    fill: #3d405b;
+    stroke: #f4f1de;
+  }
+
+  .cls-3 {
+    fill: #f4f1de;
   }
 

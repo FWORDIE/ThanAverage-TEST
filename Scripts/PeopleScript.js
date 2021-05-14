@@ -148,7 +148,7 @@ function generateStartingGrid() {
             n++;
         }
     }
-    console.log("generateStartingGrid: " + dotData)
+    //console.log("generateStartingGrid: " + dotData)
 }
 const walkbeg = new Event('walkbeg');
 const walkend = new Event('walkend');
@@ -187,105 +187,12 @@ function loadLotties() {
         dotData[n][8] = SVGs[svgNum][1];
         
         timer = (time*(sizeNum)).toFixed(2);
-        
-        const rot = Math.floor(getRandomArbitrary(5, 10))
-        const tl = gsap.timeline({
-            repeat: -1,
-            paused: true
-          });
 
-        tl.to(dot,{
-            duration: timer, 
-            ease: "power3.out", 
-            rotation:-rot,
-            transformOrigin:"0% 100%",
-            scaleY:"1.02"
-        })
-        .to(dot,{
-            duration: timer/2, 
-            ease: "power3.out", 
-            rotation:0,
-            transformOrigin:"0% 100%",
-            scaleY:"0.95"
-        })
-        .to(dot,{
-            duration: timer, 
-            ease: "power3.out", 
-            rotation:rot,
-            transformOrigin:"100% 100%",
-            scaleY:"1.02"
-        })
-        .to(dot,{
-            duration: timer/2, 
-            ease: "power3.out", 
-            rotation:0,
-            transformOrigin:"100% 100%",
-            scaleY:"0.95"
-        })
-
-    const lt = gsap.timeline({
-        paused: true
-        });
-        var Shadow = dot.querySelector('.cls-1')
-    
-        lt.to(dot,{
-            duration: timer, 
-            ease: "power3.out",
-            transformOrigin:"50% 100%",
-            scaleY:"0.8"
-        })
-        .to(dot,{
-            duration: timer*1.5, 
-            ease: "back.out", 
-            y: "-=20",
-            transformOrigin:"50% 100%",
-            scaleY:"1.05"
-        })
-        .to(Shadow,{
-            duration: timer*1.5, 
-            ease: "back.out", 
-            y: "+=20",
-            transformOrigin:"50% 100%",
-            scale:"0.7"
-        }, `-=${timer*1.5}`)
-        .to(dot,{
-            duration: timer*1.5, 
-            ease: "back.out",
-            y: "+=20",
-            transformOrigin:"50% 100%",
-            scaleY:"0.9"
-        })
-        .to(Shadow,{
-            duration: timer*1.5, 
-            ease: "back.out", 
-            y: "-=20",
-            transformOrigin:"50% 100%",
-            scale:"1"
-        }, `-=${timer*1.5}`)
-        .to(dot,{
-            duration: timer*1.5, 
-            ease: "power3.out", 
-            transformOrigin:"50% 100%",
-            scaleY:"1"
-        })
-
-        dot.addEventListener("mouseenter", (e) => {
-            lt.restart();
-        });
-
-        dot.addEventListener('walkbeg', () => {
-            tl.play();
-            moving++;
-        });
-
-        dot.addEventListener("walkend", () => {
-            tl.pause(0);
-            moving--;
-        });
+        setUpAnnimation(dot,n);
 
         dots[n] = dot;
     }
-    console.log(dotData);   
+    logger('loadLotties',dotData);
     
     showResults(50, true, true);
     for(n=0; n < dots.length; n++){
@@ -325,7 +232,7 @@ function writeData(){
         // dot.classList.remove("green","red","blue");
         // dot.classList.add(dotData[n][7]|| "blue");
     }
-    console.log("write")
+    logger('writeData','write');
 } 
 
 function walkstart(dot){
@@ -340,7 +247,7 @@ function walkstop(dot){
 // Move People
 function movePeople(item, Arr, n, instant) {
     let xOffset = ((dotData[item][3]/2)*containerPercentageWidth);
-    let yOffset = ((dotData[item][3]*dotData[item][8]/2)*containerPercentageWidth)
+    let yOffset = ((dotData[item][3]*dotData[item][8]/2)*containerPercentageWidth);
     //console.log(xOffset,yOffset);
     let xData = (Arr[n][0])-xOffset;
     let yData = (Arr[n][1])-yOffset;
@@ -427,7 +334,7 @@ function showResults(num, runaway, instant) {
     oldArr = arr;
     oldNum = num;
     resultState = true;
-    console.log(dotData);
+    logger('showResults',dotData);
     writeData();
 }
 
@@ -464,7 +371,7 @@ function gridsetup(num, bias, rule, runaway) {
         gridArr[i][1] = gridArr[i][1]-0;
         gridArr[i][0] = gridArr[i][0]-0;
     }
-    console.log(gridArr)
+    //console.log(gridArr)
 
     return gridArr;
 }
@@ -516,3 +423,103 @@ function pointchoice(oldx, oldy, array, bin) {
     return [closeP, closet];
 }
 
+function setUpAnnimation(dot,n){
+
+    const rot = Math.floor(getRandomArbitrary(5, 10))
+    const tl = gsap.timeline({
+        repeat: -1,
+        paused: true
+      });
+
+    tl.to(dot,{
+        duration: timer, 
+        ease: "power3.out", 
+        rotation:-rot,
+        transformOrigin:"0% 100%",
+        scaleY:"1.02"
+    })
+    .to(dot,{
+        duration: timer/2, 
+        ease: "power3.out", 
+        rotation:0,
+        transformOrigin:"0% 100%",
+        scaleY:"0.95"
+    })
+    .to(dot,{
+        duration: timer, 
+        ease: "power3.out", 
+        rotation:rot,
+        transformOrigin:"100% 100%",
+        scaleY:"1.02"
+    })
+    .to(dot,{
+        duration: timer/2, 
+        ease: "power3.out", 
+        rotation:0,
+        transformOrigin:"100% 100%",
+        scaleY:"0.95"
+    })
+
+const lt = gsap.timeline({
+    paused: true
+    });
+    var Shadow = dot.querySelector('.cls-1');
+    var x = (dotData[n][3]/2)*containerPercentageWidth;
+    var y = ((dotData[n][3]*dotData[n][8])*containerPercentageWidth)/2;
+    var xy = `${x} ${y}`
+
+    lt.to(dot,{
+        duration: timer, 
+        ease: "power3.out",
+        transformOrigin:"50% 100%",
+        scaleY:"0.8"
+    })
+    .to(dot,{
+        duration: timer*1.5, 
+        ease: "back.out", 
+        y: "-=20",
+        transformOrigin:"50% 100%",
+        scaleY:"1.05"
+    })
+    .to(Shadow,{
+        duration: timer*1.5, 
+        ease: "back.out", 
+        y: "+=20",
+        transformOrigin:"50% 100%",
+        scale:"0.7"
+    }, `-=${timer*1.5}`)
+    .to(dot,{
+        duration: timer*1.5, 
+        ease: "back.out",
+        y: "+=20",
+        transformOrigin:"50% 100%",
+        scaleY:"0.9"
+    })
+    .to(Shadow,{
+        duration: timer*1.5, 
+        ease: "back.out", 
+        y: "-=20",
+        transformOrigin:"50% 100%",
+        scale:"1"
+    }, `-=${timer*1.5}`)
+    .to(dot,{
+        duration: timer*1.5, 
+        ease: "power3.out", 
+        transformOrigin:"50% 100%",
+        scaleY:"1"
+    })
+
+    dot.addEventListener("mouseenter", (e) => {
+        lt.restart();
+    });
+
+    dot.addEventListener('walkbeg', () => {
+        tl.play();
+        moving++;
+    });
+
+    dot.addEventListener("walkend", () => {
+        tl.pause(0);
+        moving--;
+    });
+}
