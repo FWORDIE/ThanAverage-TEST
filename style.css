@@ -419,6 +419,10 @@ ul {
   display: none;
 }
 
+#Area {
+  display: none;
+}
+
 .linkbutton {
   color: #3e3b3b;
   text-decoration: none;
@@ -467,6 +471,19 @@ button {
   font-family: 'Prociono';
   text-decoration: none;
   color: #3e3b3b;
+  border: none;
+}
+
+input {
+  margin-top: 1.5vh;
+  margin-bottom: 2vh;
+  background-color: transparent;
+  border: 0px;
+  color: #3e3b3b;
+  border-bottom: 1px solid #3e3b3b;
+  text-align: center;
+  font-family: 'Prociono';
+  width: 100%;
 }
 
 .textarea {
@@ -534,6 +551,7 @@ button {
 }
 
 .buttonbox .button {
+  font-size: 1.4vw;
   padding: 8px 20px;
   border-radius: 50px;
   -webkit-transition-property: scale;
@@ -549,11 +567,13 @@ button {
 }
 
 .buttonbox .button:hover {
-  scale: 1.05;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .buttonbox .button:active {
-  scale: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .buttonbox #Yes {
@@ -624,7 +644,6 @@ svg {
     font-size: 3vw;
   }
   .buttonbox {
-    font-size: 3.5vw;
     margin-top: 2vw;
     margin-bottom: -2vw;
     font-family: 'Cormorant Garamond';
@@ -635,6 +654,7 @@ svg {
             flex-direction: column;
   }
   .buttonbox .button {
+    font-size: 3.5vw;
     margin: 2vw;
     padding: 8px 12px;
   }

@@ -359,6 +359,10 @@ ul {
 #AboutArea{
     display: none;
 }
+#Area{
+    display: none;
+}
+
 .linkbutton{
     color: $black;
     text-decoration: none;
@@ -398,6 +402,19 @@ button {
     font-family: 'Prociono';
     text-decoration: none;
     color: $black;
+    border: none;
+}
+
+input{
+    margin-top: 1.5vh;
+    margin-bottom: 2vh;
+background-color: transparent;
+border: 0px;
+color: $black;
+border-bottom: 1px solid $black;
+text-align: center;
+font-family: 'Prociono';
+width: 100%;
 }
 
 .textarea {
@@ -435,6 +452,7 @@ button {
     }
     
 }
+
 .sorter {
     padding: 0px 2px;
     margin: 0px;
@@ -453,6 +471,8 @@ button {
     justify-content: space-evenly;
     align-items: center;
     .button {
+        font-size: 1.4vw;
+
         padding: 8px 20px;
         border-radius: 50px;
         transition-property: scale;
@@ -465,10 +485,10 @@ button {
         color: $black;
     }
     .button:hover {
-        scale: 1.05;
+        transform: scale(1.05);
     }
     .button:active {
-        scale: 1;
+        transform: scale(1);
     }
     #Yes {
         background-color: $green;
@@ -537,13 +557,14 @@ svg {
         
     }
     .buttonbox {
-        font-size: 3.5vw;
         margin-top: 2vw;
         margin-bottom: -2vw;
             font-family: 'Cormorant Garamond';
     font-weight: 500;
         flex-direction: column;
         .button{
+            font-size: 3.5vw;
+
             margin:2vw;
             padding: 8px 12px;
         }

@@ -77,18 +77,31 @@
 			</div>
 			<div class="textarea" id="TextArea">
 				<div id="IntroArea" class="area">
-					<p id="IntroText" class="IntroText">
+					<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Start" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</a><a href="https://www.fredwordie.com/" class="button" id="Start">See my other projects</a></div>
+					<!-- <p id="IntroText" class="IntroText">
 						Imagine you are in a room with 100 random strangers, that are similiar to your peer group. 
 					</p>
 					<p id="IntroText" class="IntroText">
 						Knowing nothing about them answer the following questions by assessing yourself.
 					</p>
 					<div class="buttonbox">
-						<div class="button" onclick="Start()" id="Start">
+						<button class="button" onclick="Start()" id="Start">
 						Compare yourself to the them
-						</div>	
-					</div>
+						</button>	
+					</div> -->
 				</div>
+				<!-- <div id="SuggestArea" class="area">
+					<form>
+						<p id="QNum" class="QNum">Question Suggestion</p>
+						<label for="fname" class="IntroText">The question you do suggest:</label><br>
+						<input type="text" id="QuesSug" name="Question Sugestion" placeholder="blah blah than average?"><br>
+						<label for="lname" class="IntroText">The answer you would express:</label><br>
+						<input type="text" id="Answer" name="Answer" placeholder="Yes or No"><br>
+						<div class="buttonbox">
+						<button type="submit" class="button" value="Submit" id="Start"> Submit Question </button>
+						</div>
+					  </form>
+				</div> -->
 					<div id="AboutArea" class="area">
 						<p id="IntroText" class="IntroText">
 							ThanAverage is a small unscientific experiment investigating how we value ourselves and compare ourselves to each other.
@@ -97,13 +110,13 @@
 							Built badly by <a href="https://www.fredwordie.com/" class="link">Fred Wordie</a>
 						</p>
 						<div class="buttonbox">
-							<div class="button" onclick="Start()" id="Start">
+							<button class="button" onclick="Start()" id="Start">
 								Answer Questions
-							</div>
-							<div class="button" onclick="ResultsPage()" id="Start">
+							</button>
+							<button class="button" onclick="ResultsPage()" id="Start">
 								See Results
-							</div>
-							<a class="button" href="mailto:thanaverage@mildlyupset.com" id="Start">
+							</button>
+							<a class="button" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!" id="Start">
 								Suggest Questions
 							</a>		
 						</div>
@@ -113,15 +126,15 @@
 					<h2 id="Question" class="Question"><span id="QuesCopy"></span> than average?</h2>
 					<h2 id="Response" class="Question"><span id="Percent"></span> of participants also think they <span id="RespCopy"></span> than average.</h2>
 					<div class="buttonbox">
-						<div class="button" id="Yes" onclick="Answer('yes')">
+						<button class="button" id="Yes" onclick="Answer('yes')">
 						Yes, I am beautiful
-						</div>
-						<div class="button" onclick="Answer('no')" id="No">
+						</button>
+						<button class="button" onclick="Answer('no')" id="No">
 						No, I am ugly
-						</div>
-						<div class="button" onclick="nextQues()" id="Next">
+						</button>
+						<button class="button" onclick="nextQues()" id="Next">
 						Next question
-						</div>	
+						</button>	
 					</div>
 				</div>
 			</div>
