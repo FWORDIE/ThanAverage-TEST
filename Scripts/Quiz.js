@@ -66,7 +66,7 @@ function loadQuestion() {
 function NoQues() {
     HideOthers(QuizArea);
     clearstyle([QuesBox,YesArea,NoArea]);
-    QuizArea.innerHTML = '	<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Suggest" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</a><a class="linkbutton" href="https://www.fredwordie.com/"><div class="button" id="Start">See my other projects</div></a></div>';
+    QuizArea.innerHTML = '	<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><button class="button" id="Suggest" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</button><a class="linkbutton" href="https://www.fredwordie.com/"><div class="button" id="Start">See my other projects</div></a></div>';
     FadeIn();
 }
 
