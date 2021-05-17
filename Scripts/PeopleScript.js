@@ -182,7 +182,7 @@ function loadLotties() {
             dotData[n][3] = 3 * sizeNum.toFixed(1); 
         }
 
-        gsap.to(dot, {width:`${dotData[n][3]}%`});
+        gsap.to(dot, {width:`${dotData[n][3]}vw`});
         
         dotData[n][8] = SVGs[svgNum][1];
         
@@ -263,7 +263,7 @@ function movePeople(item, Arr, n, instant) {
     dotData[item][5] = oldY;
     dotData[item][0] = xData;
     dotData[item][1] = yData;
-    dotData[item][6] = (yData + yOffset).toFixed(0);
+    dotData[item][6] = (yData + (2*yOffset)).toFixed(0);
     //console.log(dotData[item]);
 }
 

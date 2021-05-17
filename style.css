@@ -453,6 +453,10 @@ ul {
   transition-property: transform, top, left, -webkit-transform;
   pointer-events: auto;
   will-change: transform, top, left;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .small {
@@ -496,7 +500,7 @@ input {
 }
 
 .textarea .Question {
-  font-size: 2.5vw;
+  font-size: 2.3vw;
   margin-top: 10px;
   padding-top: 0px;
   padding-bottom: 1vw;
@@ -612,11 +616,13 @@ input {
 }
 
 .invert svg {
+  scale: -1 1;
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
 }
 
 svg {
+  scale: 1 1;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
   overflow: visible;

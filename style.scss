@@ -387,6 +387,8 @@ ul {
     transition-property: transform, top, left;
     pointer-events: auto;
     will-change: transform, top, left;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 .small {
     height: auto;
@@ -427,7 +429,7 @@ width: 100%;
     
 
     .Question {
-        font-size: 2.5vw;
+        font-size: 2.3vw;
         margin-top: 10px;
         padding-top: 0px;
         padding-bottom: 1vw;
@@ -521,13 +523,15 @@ width: 100%;
 }
 
 .invert svg {
-    //scale: -1 1;
+    scale: -1 1;
     transform: scale(-1, 1);
 }
 svg {
+    scale: 1 1;
     transform: scale(1, 1);
     //display: block;
     overflow: visible;
+
 }
 
 
