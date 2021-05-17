@@ -9,13 +9,14 @@ var client = new faunadb.Client({
     scheme: "https",
 });
 
+
 // Load DataBase from Fauna
 function GetDataBase() {
     NoCalls ++;
     logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
     client
         .query(
-            q.Paginate(q.Match(q.Index("AllDemQuestions")))
+            q.Paginate(q.Match(q.Index("NewDemQuestions")))
 
             )
 
@@ -33,7 +34,7 @@ function UpdateDataBase(Num, Answer) {
     if(Answer == 'yes'){
         client
         .query(
-            q.Map(q.Paginate(q.Match(q.Index('QuestionArrNum'),Num)),
+            q.Map(q.Paginate(q.Match(q.Index('NewNumbers'),Num)),
             q.Lambda(
                 'X',
                 q.Update(
@@ -59,7 +60,7 @@ function UpdateDataBase(Num, Answer) {
     }else{
         client
         .query(
-            q.Map(q.Paginate(q.Match(q.Index('QuestionArrNum'),Num)),
+            q.Map(q.Paginate(q.Match(q.Index('NewNumbers'),Num)),
             q.Lambda(
                 'X',
                 q.Update(

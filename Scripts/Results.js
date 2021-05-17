@@ -17,19 +17,19 @@ function ResultsPage() {
 }
 
 function AboutPage() {
-    if(resultState == true){
-        reset();
-        resultState = false;
-    }
-
     FadeOut();
     setTimeout(LoadAboutPage, Math.round((longestTime * 1000) / 2));
 }
 
 function LoadAboutPage(){
     if(ResultsPageOpen == true){
+        document.getElementById('Results').innerText = "See Results";
         reset();
         ResultsPageOpen = false;
+    }
+    if(resultState == true){
+        reset();
+        resultState = false;
     }
 
     HideOthers(AboutArea);

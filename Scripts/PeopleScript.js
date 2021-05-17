@@ -362,9 +362,9 @@ function gridsetup(num, bias, rule, runaway) {
         gridArr[i] = randomPointOf(i, bias, rule);
         if (runaway == true) {
             if (rule == 0) {
-                gridArr[i][0] = parseFloat(gridArr[i][0])-containerWidth/5;
+                gridArr[i][0] = parseFloat(gridArr[i][0])-containerWidth/4;
             } else {
-                gridArr[i][0] = parseFloat(gridArr[i][0])+containerWidth/5;
+                gridArr[i][0] = parseFloat(gridArr[i][0])+containerWidth/4;
             }
         } else {
         }
