@@ -32,7 +32,6 @@
 
 html {
   background-color: #f4f1de;
-  background: url(/imgs/img-noise-361x370.png);
   font-family: 'Prociono';
   color: #3e3b3b;
   overflow: hidden;
@@ -48,6 +47,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url(/imgs/img-noise-361x370.png);
   margin: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -441,6 +441,7 @@ ul {
   height: auto;
   position: absolute;
   overflow: visible;
+  max-width: 6vw;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transform-origin: 50% 100%;
@@ -543,7 +544,7 @@ input {
 }
 
 .buttonbox {
-  font-size: 1.4vw;
+  font-size: 1.3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -556,7 +557,7 @@ input {
 }
 
 .buttonbox .button {
-  font-size: 1.4vw;
+  font-size: 1.3vw;
   padding: 8px 20px;
   border-radius: 50px;
   -webkit-transition-property: scale;
@@ -629,6 +630,9 @@ svg {
 }
 
 @media only screen and (max-width: 760px) {
+  .dot {
+    max-width: 10vw;
+  }
   #some-element {
     display: none;
   }

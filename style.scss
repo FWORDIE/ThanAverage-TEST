@@ -49,7 +49,6 @@ $SMALL: 1vw;
 
 html {
     background-color: $cream;
-    background: url(/imgs/img-noise-361x370.png);
 font-family: 'Prociono';
     color: $black;
     overflow: hidden;
@@ -61,6 +60,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: url(/imgs/img-noise-361x370.png);
 
     margin: 0;
     flex-direction: column;
@@ -381,6 +381,7 @@ ul {
     height: auto;
     position: absolute;
     overflow: visible;
+    max-width:6vw;
     transform: translate(-50%, -50%);
     transform-origin: 50% 100%;
     transition-timing-function: cubic-bezier(.45,.05,.55,.95);
@@ -469,12 +470,12 @@ width: 100%;
 }
 
 .buttonbox {
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     .button {
-        font-size: 1.4vw;
+        font-size: 1.3vw;
 
         padding: 8px 20px;
         border-radius: 50px;
@@ -536,6 +537,9 @@ svg {
 
 
 @media only screen and (max-width: 760px) {
+    .dot {
+        max-width: 10vw;
+    }
     #some-element { 
         display: none; 
     }
