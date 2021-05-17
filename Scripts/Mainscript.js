@@ -1,5 +1,5 @@
 // When Page Loads
-
+var Logger = false;
 
 document.onload = pageSetUp();
 
@@ -16,8 +16,10 @@ function pageSetUp() {
 }
 
 function logger(func,thing){
+    if(Logger == true){
     console.log(`${func} whispers:`);
     console.log(thing);
+    }
 }
 
 
