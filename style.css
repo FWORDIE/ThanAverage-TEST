@@ -343,7 +343,7 @@ ul {
 }
 
 #container {
-  width: 90%;
+  width: 95%;
   height: 90%;
   position: relative;
   overflow: show;
@@ -489,8 +489,8 @@ input {
 .textarea {
   height: auto;
   max-height: 40%;
-  width: 57%;
-  padding: 10vh;
+  width: 52vw;
+  padding: 7vh;
   text-align: center;
   z-index: 0;
 }
@@ -500,6 +500,7 @@ input {
   margin-top: 10px;
   padding-top: 0px;
   padding-bottom: 1vw;
+  margin-bottom: 1.5vw;
 }
 
 .textarea .QNum {
@@ -513,8 +514,8 @@ input {
 
 .textarea .IntroText {
   margin-top: 0px;
-  margin-bottom: 2vw;
-  font-size: 1.4vw;
+  margin-bottom: 1.5vw;
+  font-size: 1.3vw;
 }
 
 .textarea #Response {
@@ -611,13 +612,13 @@ input {
 }
 
 .invert svg {
-  scale: -1 1;
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
 }
 
 svg {
-  display: block;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
   overflow: visible;
 }
 
@@ -628,7 +629,7 @@ svg {
   .textarea {
     height: auto;
     max-height: 50%;
-    width: 60%;
+    width: 56vw;
   }
   .textarea .Question {
     font-size: 5vw;

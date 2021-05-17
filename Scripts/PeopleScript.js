@@ -59,7 +59,7 @@ function Mobile() {
         refHei = containerHeight/ y;
         blobWid = refWid;
         blobHei = refHei; 
-        gsap.to('.textarea',{width:"66%","max-height":"66%"})
+        gsap.to('.textarea',{width:"64vw","max-height":"66%"})
         // x = 14;
         // y = 14;
         // t = 12;
@@ -464,6 +464,8 @@ const lt = gsap.timeline({
     paused: true
     });
     var Shadow = dot.querySelector('.cls-1');
+    var Body = dot.querySelector('.cls-2');
+    var Eyes = dot.querySelector('.cls-3');
     var x = (dotData[n][3]/2)*containerPercentageWidth;
     var y = ((dotData[n][3]*dotData[n][8])*containerPercentageWidth)/2;
     var xy = `${x} ${y}`
@@ -477,28 +479,36 @@ const lt = gsap.timeline({
     .to(dot,{
         duration: timer*1.5, 
         ease: "back.out", 
-        y: "-=20",
         transformOrigin:"50% 100%",
         scaleY:"1.05"
     })
+    .to([Body, Eyes], {
+        duration: timer*1.5, 
+        ease: "back.out", 
+        y: "-=20"
+    }, `-=${timer*1.5}`)
     .to(Shadow,{
         duration: timer*1.5, 
         ease: "back.out", 
-        y: "+=20",
+        y: "0",
         transformOrigin:"50% 100%",
         scale:"0.7"
     }, `-=${timer*1.5}`)
     .to(dot,{
         duration: timer*1.5, 
         ease: "back.out",
-        y: "+=20",
         transformOrigin:"50% 100%",
         scaleY:"0.9"
     })
+    .to([Body, Eyes], {
+        duration: timer*1.5, 
+        ease: "back.out", 
+        y: "+=20"
+    }, `-=${timer*1.5}`)
     .to(Shadow,{
         duration: timer*1.5, 
         ease: "back.out", 
-        y: "-=20",
+        y: "0",
         transformOrigin:"50% 100%",
         scale:"1"
     }, `-=${timer*1.5}`)
