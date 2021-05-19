@@ -56,7 +56,7 @@ let questions = [
     ],
     [
         6,
-        "Are your feet look better",
+        "Are your feet looking better",
         "they're better",
         "they're worse",
         "have better looking feet",
@@ -533,7 +533,7 @@ let questions = [
         "I have more",
         "I have less",
         "have more friends",
-        "have less friends",
+        "have fewer friends",
         5,
         3,
         2
