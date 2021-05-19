@@ -6,20 +6,20 @@ let questions = [
         "I'm slower",
         "walk faster",
         "walk slower",
-        906,
-        628,
-        279
+        3696,
+        2658,
+        1039
     ],
     [
         2,
         "Do you eat healthier food",
-        "I'm healthier",
-        "I'm less healthily",
+        "healthier",
+        "less healthy",
         "eat healthier",
-        "eat less healthily",
-        906,
-        367,
-        539
+        "eat less healthy",
+        5155,
+        2369,
+        2786
     ],
     [
         3,
@@ -28,9 +28,9 @@ let questions = [
         "I care less",
         "care more about the enviroment",
         "care less about the enviroment",
-        906,
-        650,
-        257
+        5264,
+        3452,
+        1813
     ],
     [
         4,
@@ -39,9 +39,9 @@ let questions = [
         "I'm worse",
         "are better at keeping their home tidy",
         "are worse at keeping their home tidy",
-        906,
-        247,
-        660
+        5128,
+        1874,
+        3255
     ],
     [
         5,
@@ -50,9 +50,9 @@ let questions = [
         "I'm less smart ",
         "are smarter",
         "are less smart",
-        906,
-        786,
-        120
+        5257,
+        4490,
+        767
     ],
     [
         6,
@@ -61,9 +61,9 @@ let questions = [
         "they're worse",
         "have better looking feet",
         "have worse looking feet",
-        906,
-        317,
-        590
+        5084,
+        2256,
+        2829
     ],
     [
         7,
@@ -72,9 +72,9 @@ let questions = [
         "I'm worse",
         "are a better listener",
         "are a worse listener",
-        863,
-        483,
-        381
+        5213,
+        3244,
+        1970
     ],
     [
         8,
@@ -83,9 +83,9 @@ let questions = [
         "I'm less",
         "are more privileged",
         "are less privileged",
-        906,
-        748,
-        158
+        5197,
+        4374,
+        823
     ],
     [
         9,
@@ -94,9 +94,9 @@ let questions = [
         "I smell worse",
         "smell better",
         "smell worse",
-        906,
-        410,
-        496
+        5175,
+        2705,
+        2470
     ],
     [
         10,
@@ -105,9 +105,9 @@ let questions = [
         "I'm worse",
         "are a better communicator",
         "are a worse communicator",
-        870,
-        382,
-        488
+        5291,
+        2746,
+        2545
     ],
     [
         11,
@@ -116,9 +116,9 @@ let questions = [
         "I'm worse",
         "are better at washing up",
         "are worse at washing up",
-        905,
-        350,
-        555
+        5155,
+        2497,
+        2658
     ],
     [
         12,
@@ -127,9 +127,9 @@ let questions = [
         "I'm less",
         "are more curious",
         "are less curious",
-        906,
-        745,
-        162
+        5385,
+        4503,
+        883
     ],
     [
         13,
@@ -138,9 +138,9 @@ let questions = [
         "I'm less happy",
         "are happier",
         "are less happy",
-        906,
-        350,
-        556
+        5209,
+        2582,
+        2627
     ],
     [
         14,
@@ -149,20 +149,20 @@ let questions = [
         "I'm less kind",
         "are kinder",
         "are less kind",
-        906,
-        651,
-        255
+        5210,
+        3703,
+        1507
     ],
     [
         15,
         "Do you have better ideas",
-        "they're beter",
+        "they're better",
         "they're worse",
         "have better ideas",
         "have worse ideas",
-        906,
-        547,
-        360
+        5207,
+        3481,
+        1727
     ],
     [
         16,
@@ -171,9 +171,9 @@ let questions = [
         "I'm less",
         "are more conservative",
         "are less conservative",
-        906,
-        125,
-        781
+        5334,
+        963,
+        4371
     ],
     [
         17,
@@ -182,9 +182,9 @@ let questions = [
         "I complain less",
         "complain more",
         "complain less",
-        906,
-        453,
-        454
+        5351,
+        2247,
+        3105
     ],
     [
         18,
@@ -193,9 +193,9 @@ let questions = [
         "I give less",
         "give more to homeless people",
         "give less to homeless people",
-        906,
-        189,
-        718
+        4924,
+        783,
+        4142
     ],
     [
         19,
@@ -204,9 +204,9 @@ let questions = [
         "It's worse",
         "have a better music taste",
         "have a worse music taste",
-        906,
-        542,
-        364
+        5154,
+        3124,
+        3124
     ],
     [
         20,
@@ -215,9 +215,9 @@ let questions = [
         "they're worse",
         "give better gifts",
         "give worse gifts",
-        906,
-        324,
-        583
+        5027,
+        1906,
+        3122
     ],
     [
         21,
@@ -226,9 +226,9 @@ let questions = [
         "I'm worse",
         "are a better friend",
         "are a worse friend",
-        906,
-        412,
-        494
+        5305,
+        2481,
+        2824
     ],
     [
         22,
@@ -237,9 +237,9 @@ let questions = [
         "I'm less",
         "are more progressive",
         "are less progressive",
-        906,
-        733,
-        174
+        5019,
+        3937,
+        1083
     ],
     [
         23,
@@ -248,9 +248,9 @@ let questions = [
         "I'm worse",
         "are better looking",
         "are worse looking",
-        906,
-        375,
-        532
+        5346,
+        2659,
+        2688
     ],
     [
         24,
@@ -259,9 +259,9 @@ let questions = [
         "I'm less",
         "are more interesting",
         "are less interesting",
-        820,
-        402,
-        419
+        4979,
+        2314,
+        2666
     ],
     [
         25,
@@ -270,9 +270,9 @@ let questions = [
         "I'm worse",
         "are better at their work",
         "are worse at their work",
-        818,
-        472,
-        346
+        5028,
+        3302,
+        1726
     ],
     [
         26,
@@ -281,9 +281,9 @@ let questions = [
         "I'm less",
         "are more ambitious",
         "are less ambitious",
-        814,
-        331,
-        483
+        5244,
+        2201,
+        3043
     ],
     [
         27,
@@ -292,20 +292,20 @@ let questions = [
         "I'm less",
         "are more creative",
         "are less creative",
-        772,
-        403,
-        369
+        5289,
+        2658,
+        2631
     ],
     [
         28,
         "Are you better at sex",
         "I'm better",
         "I'm worse",
-        "are beter at sex",
+        "are better at sex",
         "are worse at sex",
-        244,
-        78,
-        166
+        3340,
+        1350,
+        1990
     ],
     [
         29,
@@ -314,9 +314,9 @@ let questions = [
         "I'm less",
         "are more patient",
         "are less patient",
-        772,
-        451,
-        321
+        5046,
+        3133,
+        1913
     ],
     [
         30,
@@ -325,9 +325,9 @@ let questions = [
         "worse",
         "have better dental hygiene",
         "have worse dental hygiene",
-        272,
-        109,
-        164
+        4700,
+        1968,
+        2733
     ],
     [
         31,
@@ -336,9 +336,9 @@ let questions = [
         "less",
         "procrastinate more",
         "procrastinate less",
-        272,
-        232,
-        40
+        4558,
+        3476,
+        1082
     ],
     [
         32,
@@ -347,9 +347,9 @@ let questions = [
         "I'm worse",
         "are a better driver",
         "are a worse driver",
-        272,
-        111,
-        162
+        4593,
+        2947,
+        1647
     ],
     [
         33,
@@ -358,9 +358,9 @@ let questions = [
         "it was worse",
         "had a better childhood",
         "had a worse childhood",
-        271,
-        185,
-        87
+        4438,
+        3190,
+        1249
     ],
     [
         34,
@@ -369,9 +369,9 @@ let questions = [
         "I'm worse",
         "are a better hugger",
         "are a worse hugger",
-        269,
-        123,
-        146
+        4367,
+        2234,
+        2133
     ],
     [
         35,
@@ -380,9 +380,9 @@ let questions = [
         "I'm less funny",
         "are funnier",
         "are less funny",
-        269,
-        157,
-        112
+        4382,
+        2736,
+        1646
     ],
     [
         36,
@@ -391,9 +391,9 @@ let questions = [
         "I'm worse",
         "are better at maths",
         "are worse at maths",
-        269,
-        175,
-        94
+        4578,
+        2997,
+        1581
     ],
     [
         37,
@@ -402,9 +402,9 @@ let questions = [
         "less",
         "spend more time on their phone",
         "spend less time on their phone",
-        267,
-        165,
-        103
+        4550,
+        2451,
+        2100
     ],
     [
         38,
@@ -413,9 +413,9 @@ let questions = [
         "I'm less",
         "are more narcissitic",
         "are less narcissitic",
-        266,
-        97,
-        169
+        4745,
+        1644,
+        3101
     ],
     [
         39,
@@ -424,9 +424,9 @@ let questions = [
         "I'm less",
         "are more sterotypically their gender",
         "are less sterotypically their gender",
-        261,
-        52,
-        209
+        4734,
+        1410,
+        3324
     ],
     [
         40,
@@ -435,9 +435,9 @@ let questions = [
         "it's worse",
         "have a better memory",
         "have a worse memory",
-        261,
-        101,
-        160
+        4659,
+        2120,
+        2539
     ],
     [
         41,
@@ -446,9 +446,9 @@ let questions = [
         "I'm less",
         "are more humble",
         "are less humble",
-        253,
-        133,
-        120
+        4483,
+        2556,
+        1927
     ],
     [
         42,
@@ -457,9 +457,9 @@ let questions = [
         "I'm worse",
         "are better at cooking",
         "are worse at cooking",
-        161,
-        61,
-        100
+        4222,
+        2204,
+        2018
     ],
     [
         43,
@@ -468,9 +468,9 @@ let questions = [
         "less",
         "change their bed sheets more",
         "change their bed sheets less",
-        148,
-        22,
-        126
+        4491,
+        961,
+        3530
     ],
     [
         44,
@@ -479,9 +479,9 @@ let questions = [
         "I have less",
         "have more common sense",
         "have less common sense",
-        122,
-        84,
-        38
+        4405,
+        3633,
+        772
     ],
     [
         45,
@@ -490,9 +490,9 @@ let questions = [
         "I'm less",
         "are more confident",
         "are less confident",
-        117,
-        38,
-        79
+        4581,
+        1926,
+        2655
     ],
     [
         46,
@@ -501,9 +501,9 @@ let questions = [
         "less",
         "exercise more",
         "exercise less",
-        5,
-        2,
-        3
+        4516,
+        1556,
+        2960
     ],
     [
         47,
@@ -512,9 +512,9 @@ let questions = [
         "less",
         "read more",
         "read less",
-        5,
-        1,
-        4
+        4342,
+        1749,
+        2593
     ],
     [
         48,
@@ -523,9 +523,9 @@ let questions = [
         "less",
         "sleep more",
         "sleep less",
-        5,
-        3,
-        2
+        4452,
+        1966,
+        2486
     ],
     [
         49,
@@ -534,9 +534,9 @@ let questions = [
         "I have less",
         "have more friends",
         "have fewer friends",
-        5,
-        3,
-        2
+        4352,
+        920,
+        3432
     ],
     [
         50,
@@ -545,9 +545,9 @@ let questions = [
         "I'm less healthy",
         "are healthier",
         "are less healthy",
-        5,
-        3,
-        2
+        4354,
+        2347,
+        2007
     ],
     [
         51,
@@ -556,9 +556,9 @@ let questions = [
         "I'm less",
         "are more religious",
         "are less religious",
-        5,
-        0,
-        5
+        4347,
+        390,
+        3957
     ],
     [
         52,
@@ -567,9 +567,9 @@ let questions = [
         "I'm less",
         "are more optimistic",
         "are less optimistic",
-        5,
-        3,
-        2
+        2757,
+        1373,
+        1384
     ]
 ]
         
