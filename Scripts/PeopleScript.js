@@ -4,7 +4,7 @@ gsap.registerPlugin(CSSRulePlugin, MorphSVGPlugin);
 
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = 1*(containerWidth*0.2) ;
+let speed = 1.1*(containerWidth*0.2) ;
 let bias = 100;
 let x = 14;
 let y = 10;
