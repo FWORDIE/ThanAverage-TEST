@@ -3,14 +3,16 @@ let NoCalls = 0;
 let NoPosts = 0;
 var faunadb = window.faunadb;
 var q = faunadb.query;
-var client = new faunadb.Client({
-    secret: "fnAEH9qaMKACAZUacat_8gPzT9yf_m85U7fy8kdb",
-    domain: "db.fauna.com",
-    scheme: "https",
-});
+// var client = new faunadb.Client({
+//     secret: "fnAEH9qaMKACAZUacat_8gPzT9yf_m85U7fy8kdb",
+//     domain: "db.fauna.com",
+//     scheme: "https",
+//     headers: {'x-max-retries-on-contention': 0}
+
+// });
 
 
-// Load DataBase from Fauna
+// Load DataBase from Fauna /// change to read only only on question
 function GetDataBase() {
     NoCalls ++;
     logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
