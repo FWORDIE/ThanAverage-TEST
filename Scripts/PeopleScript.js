@@ -30,6 +30,7 @@ let dots = [];
 let time = 0.15;
 let containerPercentageHeight = containerHeight/100;
 let containerPercentageWidth = containerWidth/100;
+let speedDouble= false;
 
 //console.log(containerHeight, containerWidth);
 
@@ -89,6 +90,20 @@ function runaway() {
     //console.log("Runway Start resultState " + resultState);
     showResults(oldNum, true);
  
+}
+
+function speed2(){
+    if(speedDouble == false){
+        speed = speed*2;
+        speedDouble = true;
+        document.getElementById("SpeedThing").innerText = "1x Speed";
+    }else{
+        speed = speed/2
+        speedDouble = false;
+        document.getElementById("SpeedThing").innerText = "2x Speed";
+    }
+
+
 }
 
 // Test Button Load LoadLotties

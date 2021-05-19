@@ -30,6 +30,18 @@
   font-display: swap;
 }
 
+.speed2 {
+  position: absolute;
+  bottom: 2vw;
+  pointer-events: all;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.speed2:hover {
+  text-decoration: underline;
+}
+
 html {
   background-color: #f4f1de;
   font-family: 'Prociono';
