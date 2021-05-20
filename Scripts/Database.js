@@ -4,7 +4,7 @@ let NoPosts = 0;
 var faunadb = window.faunadb;
 var q = faunadb.query;
 // var client = new faunadb.Client({
-//     secret: "fnAEH9qaMKACAZUacat_8gPzT9yf_m85U7fy8kdb",
+//     secret: "",
 //     domain: "db.fauna.com",
 //     scheme: "https",
 //     headers: {'x-max-retries-on-contention': 0}
