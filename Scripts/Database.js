@@ -4,10 +4,12 @@ let NoPosts = 0;
 // Load DataBase from Fauna /// change to read only only on question
 function GetDataBase() {
   NoCalls++;
-  fetch("https://backend.thanaverage.xyz/questions").then(async (response) => {
-    questions = await response.json();
-    console.log(`Got questions, ${questions.length}`);
-  });
+  fetch("https://backstuff.thanaverage.xyz/questions").then(
+    async (response) => {
+      questions = await response.json();
+      console.log(`Got questions, ${questions.length}`);
+    }
+  );
 }
 
 // Update dataBase
@@ -18,7 +20,7 @@ function GetDataBase() {
 function UpdateDataBase(questionNumber, answer) {
   NoPosts++;
   logger("GetDataBase", `Calls: ${NoCalls}, Posts: ${NoPosts}`);
-  fetch("https://backend.thanaverage.xyz/answer", {
+  fetch("https://backstuff.thanaverage.xyz/answer", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
