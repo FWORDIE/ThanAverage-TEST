@@ -205,7 +205,7 @@ let questions = [
         "have a better music taste",
         "have a worse music taste",
         5154,
-        3124,
+        2030,
         3124
     ],
     [
