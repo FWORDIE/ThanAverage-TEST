@@ -1,5 +1,6 @@
 let ResultsArr = [];
 let ResultsPageOpen = false;
+let listDone = false;
 
 // Prepare to load Results Window
 function ResultsPage() {
@@ -55,6 +56,7 @@ function LoadRes() {
 
 // Make Result List
 function DisplayList() {
+    if(listDone == false){
     var options = {
         valueNames: [
             "Percent",
@@ -67,6 +69,8 @@ function DisplayList() {
         item:
             '<li id="Question-item" ><h3 class="Percent Class" data-default-order="asc" ><span>%</span></h3><p class="Statement">of participants think they <span class="StatementTXT Class2"></span> than average.</p><p class="Responses">732</p><p class="Question">Q1</p></li>',
     };
+    
+
 
     var values = GenResultsArray();
 
@@ -74,6 +78,8 @@ function DisplayList() {
     userList.sort("Question", {
         order: "asc",
     });
+
+ 
 
     var instance = OverlayScrollbars(document.getElementById("List"), {
         sizeAutoCapable: true,
@@ -88,6 +94,8 @@ function DisplayList() {
             snapHandle: false,
         },
     });
+    listDone = true;
+}
 }
 
 // Generate Results Array
