@@ -1,90 +1,29 @@
 // Load Fauna Stuff
 let NoCalls = 0;
 let NoPosts = 0;
-var faunadb = window.faunadb;
-var q = faunadb.query;
-// var client = new faunadb.Client({
-//     secret: "",
-//     domain: "db.fauna.com",
-//     scheme: "https",
-//     headers: {'x-max-retries-on-contention': 0}
-
-// });
-
 
 // Load DataBase from Fauna /// change to read only only on question
 function GetDataBase() {
-    NoCalls ++;
-    logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
-    client
-        .query(
-            q.Paginate(q.Match(q.Index("NewDemQuestions")))
-
-            )
-
-        .then((ret) => {
-            questions = ret.data;
-            logger('GetDataBase',questions);
-        })
-        .catch((err) => console.error("Error: %s", err));
+NoCalls++;
+fetch("http://167.71.78.185/questions").then(async (response) => {
+questions = await response.json();
+console.log(`Got questions, ${questions.length}`);
+});
 }
 
-// Update Fauna DataBase
-function UpdateDataBase(Num, Answer) {
-    NoPosts ++;
-    logger('GetDataBase',`Calls: ${NoCalls}, Posts: ${NoPosts}`);
-    if(Answer == 'yes'){
-        client
-        .query(
-            q.Map(q.Paginate(q.Match(q.Index('NewNumbers'),Num)),
-            q.Lambda(
-                'X',
-                q.Update(
-                  q.Var('X'),
-                  {
-                    data: {
-                        Total: q.Add(
-                        q.Select(['data', 'Total'], q.Get(q.Var('X'))),
-                        1
-                      ),
-                      Yes: q.Add(
-                        q.Select(['data', 'Yes'], q.Get(q.Var('X'))),
-                        1
-                      )
-                    }
-                  }
-                )
-            )
-        )
-        )
-        .then((ret) => logger('UpdateDataBase',ret))
-        .catch((err) => console.error("Error: %s", err));
-    }else{
-        client
-        .query(
-            q.Map(q.Paginate(q.Match(q.Index('NewNumbers'),Num)),
-            q.Lambda(
-                'X',
-                q.Update(
-                  q.Var('X'),
-                  {
-                    data: {
-                        Total: q.Add(
-                        q.Select(['data', 'Total'], q.Get(q.Var('X'))),
-                        1
-                      ),
-                      No: q.Add(
-                        q.Select(['data', 'No'], q.Get(q.Var('X'))),
-                        1
-                      )
-                    }
-                  }
-                )
-            )
-        )
-        )
-        .then((ret) => logger('UpdateDataBase',ret))
-        .catch((err) => console.error("Error: %s", err));
-    }
-    
+// Update dataBase
+/**
+* @param {number} questionNumber
+* @param {'yes'| 'no'} answer
+*/
+function UpdateDataBase(questionNumber, answer) {
+NoPosts++;
+logger("GetDataBase", `Calls: ${NoCalls}, Posts: ${NoPosts}`);
+fetch("http://167.71.78.185/answer", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+},
+body: JSON.stringify({ questionNumber: questionNumber, answer: answer }),
+}).then(async (res) => console.log(await res.text()));
 }
