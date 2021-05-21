@@ -26,7 +26,7 @@ if(sessionStorage.getItem("localUsedQues" === null)){
 
 // Load New Question Number
 function NewQnum() {
-    QNum = Math.round(getRandomArbitrary(0, NumofQues));
+    QNum = Math.floor(Math.random() * questions.length);
     if (UsedQues.includes(QNum)) {
         NewQnum();
     } else {
