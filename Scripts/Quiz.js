@@ -76,9 +76,9 @@ function Start() {
 function loadQuestion() {
     FadeOut();
     if (UsedQues.length >= (questions.length-1)) {
-        setTimeout(NoQues, Math.round((1) / 2));
+        setTimeout(NoQues, Math.round((longestTime * 1000) / 2));
     } else {
-        setTimeout(NewQues, Math.round((1) / 2));
+        setTimeout(NewQues, Math.round((longestTime * 1000) / 2));
     }
 }
 
