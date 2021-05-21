@@ -1,5 +1,5 @@
 // When Page Loads
-var Logger = true;
+var Logger = false;
 
 document.onload = pageSetUp();
 
