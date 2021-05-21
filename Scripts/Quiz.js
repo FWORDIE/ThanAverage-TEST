@@ -33,6 +33,8 @@ function NewQnum() {
         UsedQues.push(QNum);
         sessionStorage.setItem('localUsedQues', UsedQues);
         logger('NewQnum(usedArr',UsedQues);
+        logger('NewQnum',QNum);
+
         return QNum;
     }
 }
@@ -83,7 +85,9 @@ function NewQues() {
     HideOthers(QuizArea);
 
     clearstyle([QuesBox,YesArea,NoArea]);
-    Qnum = NewQnum();
+    
+    QNum = NewQnum();
+    logger('NewQues',QNum);
     logger('NewQues',questions[QNum]);
 
     QNumArea.innerText = "Q" + questions[QNum][0];
@@ -104,19 +108,20 @@ function Answer(type) {
         FadeIn();
         clearstyle([RespBox, Next]);
         QNumArea.innerText = questions[QNum][6] + " Responses";
+        nQNum = questions[QNum][0]
 
         if (type == "yes") {
             PercArea.innerText = LowQPcent + "%";
             RespArea.innerText = questions[QNum][4];
             gsap.to([PercArea,RespArea],{color:'#81b29a', duration:0})
             questions[QNum][7]++;
-            UpdateDataBase(Qnum+1, "yes");
+            UpdateDataBase(nQNum, "yes");
         } else {
             PercArea.innerText = 100 - LowQPcent + "%";
             RespArea.innerText = questions[QNum][5]
             gsap.to([PercArea,RespArea],{color:'#e07a5f', duration:0})
             questions[QNum][8]++;
-            UpdateDataBase(Qnum+1, "no");
+            UpdateDataBase(nQNum, "no");
         }
         logger('Answer',type);
         logger('Answer',[questions[QNum],QPcent]);
