@@ -29,7 +29,9 @@ function NewQnum() {
     QNum = Math.floor(Math.random() * questions.length);
     if (UsedQues.includes(QNum)) {
         NewQnum();
-    } else {
+    } 
+    
+    else {
         UsedQues.push(QNum);
         sessionStorage.setItem('localUsedQues', UsedQues);
         logger('NewQnum(usedArr',UsedQues);
@@ -133,7 +135,9 @@ function Answer(type) {
 
 // Generate Percent
 function GenPcent(Num) {
-    let Frac = questions[Num][7] / questions[Num][6];
+    logger('GenPcent', questions[Num][8]  )
+    logger('GenPcent', questions[Num][7]  )
+    let Frac = questions[Num][7] / (questions[Num][7]+questions[Num][8]);
     let Pcent = (Frac * 100).toFixed(1);
     return Pcent;
 }
