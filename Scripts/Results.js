@@ -101,7 +101,7 @@ function DisplayList() {
 // Generate Results Array
 function GenResultsArray() {
     for (let n = 0; n < questions.length; n++) {
-        if(questions[n][0] !== 19){
+        if(questions[n][6] > 100){
         let ResPercent = GenPcent(n);
         let Statement = "";
         let Class = "";
