@@ -75,10 +75,10 @@ function Start() {
 // Load a new Question in
 function loadQuestion() {
     FadeOut();
-    if (UsedQues.length == NumofQues) {
-        setTimeout(NoQues, Math.round((longestTime * 1000) / 2));
+    if (UsedQues.length >= (questions.length-1)) {
+        setTimeout(NoQues, Math.round((1) / 2));
     } else {
-        setTimeout(NewQues, Math.round((longestTime * 1000) / 2));
+        setTimeout(NewQues, Math.round((1) / 2));
     }
 }
 
@@ -86,7 +86,7 @@ function loadQuestion() {
 function NoQues() {
     HideOthers(QuizArea);
     clearstyle([QuesBox,YesArea,NoArea]);
-    QuizArea.innerHTML = '<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Start" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</a><a href="https://www.fredwordie.com/" class="button" id="Start">See my other projects</a></div>';
+    QuizArea.innerHTML = '<p id="IntroText" class="IntroText">You have reached the bottom of the bucket and there are no more questions</p><div class="buttonbox"><a class="button" id="Start" href="mailto:thanaverage@mildlyupset.com?subject=A%20Question%20Suggestion&body=Heya%2C%0A%0A%0AThe%20question%20I%20do%20suggest%3A%0A%0A...%0A%0AThe%20answer%20I%20would%20express%3A%0A%0A...%0A%0A%0ASee%20ya!">Suggest Questions</a><a href="https://www.fredwordie.com/" class="button" id="Start">See my other projects</a><a style="display:none;max-width:0px;height:1px:" id="Next"></></div>';
     FadeIn();
 }
 
