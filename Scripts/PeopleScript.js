@@ -4,7 +4,7 @@ gsap.registerPlugin(CSSRulePlugin, MorphSVGPlugin);
 
 let containerHeight = document.getElementById("container").clientHeight;
 let containerWidth = document.getElementById("container").clientWidth;
-let speed = 1.1*(containerWidth*0.2) ;
+let speed = 1.1*(containerWidth*0.25) ;
 let bias = 100;
 let x = 14;
 let y = 10;
@@ -96,14 +96,12 @@ function speed2(){
     if(speedDouble == false){
         speed = speed*2;
         speedDouble = true;
-        document.getElementById("SpeedThing").innerText = "1x Speed";
+        document.getElementById("SpeedThing").innerText = "Normal Time";
     }else{
         speed = speed/2
         speedDouble = false;
-        document.getElementById("SpeedThing").innerText = "2x Speed";
+        document.getElementById("SpeedThing").innerText = "Double Time";
     }
-
-
 }
 
 // Test Button Load LoadLotties

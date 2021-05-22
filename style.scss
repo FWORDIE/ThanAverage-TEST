@@ -48,14 +48,21 @@ $SMALL: 1vw;
 
 .speed2{
     position: absolute;
-    bottom: 2vw;
+    font-size: 1.1vw;
+    bottom: 3vw;
+    right:5%;
     pointer-events: all;
     z-index: 9999;
     cursor: pointer;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond';
+    font-weight: 500;
+    font-weight: normal;
+    text-decoration: none;    
 }
 .speed2:hover{
-text-decoration: underline;
-
+    text-decoration: underline;
 }
 html {
     background-color: $cream;
@@ -544,9 +551,34 @@ svg {
     overflow: visible;
 
 }
-
+.exlpainer{
+    text-align: center;
+}
 
 @media only screen and (max-width: 760px) {
+    .exlpainer{
+        font-size: 1.4vw;
+    }
+    .speed2{
+        position: absolute;
+        font-size: 3vw;
+        bottom: 3vh;
+        right:0;
+        left:0;
+        margin-left: auto; 
+        margin-right: auto; 
+        width:100px;
+        pointer-events: all;
+        z-index: 9999;
+        cursor: pointer;
+        background-color: transparent;
+        cursor: pointer;
+        font-family: 'Cormorant Garamond';
+        font-weight: 500;
+        font-weight: normal;
+        text-decoration: none;    
+    }
+
     .dot {
         max-width: 10vw;
     }
