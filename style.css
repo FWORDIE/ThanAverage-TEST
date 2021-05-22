@@ -56,6 +56,8 @@ html {
   color: #3e3b3b;
   overflow: hidden;
   max-height: -webkit-fill-available;
+  max-height: -moz-available;
+  max-height: stretch;
 }
 
 body {

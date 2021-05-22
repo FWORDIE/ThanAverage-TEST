@@ -6,9 +6,9 @@ let questions = [
         "I'm slower",
         "walk faster",
         "walk slower",
-        3696,
-        2658,
-        1039
+        5462,
+        3682,
+        1780
     ],
     [
         2,
@@ -17,20 +17,20 @@ let questions = [
         "less healthy",
         "eat healthier",
         "eat less healthy",
-        5155,
-        2369,
-        2786
+        6999,
+        3314,
+        3685
     ],
     [
         3,
         "Do you care more about the environment",
         "I care more",
         "I care less",
-        "care more about the enviroment",
-        "care less about the enviroment",
-        5264,
-        3452,
-        1813
+        "care more about the environment",
+        "care less about the environment",
+        7122,
+        4469,
+        2653
     ],
     [
         4,
@@ -39,9 +39,9 @@ let questions = [
         "I'm worse",
         "are better at keeping their home tidy",
         "are worse at keeping their home tidy",
-        5128,
-        1874,
-        3255
+        7635,
+        3123,
+        4512
     ],
     [
         5,
@@ -50,9 +50,9 @@ let questions = [
         "I'm less smart ",
         "are smarter",
         "are less smart",
-        5257,
-        4490,
-        767
+        7811,
+        5956,
+        1855
     ],
     [
         6,
@@ -61,9 +61,9 @@ let questions = [
         "they're worse",
         "have better looking feet",
         "have worse looking feet",
-        5084,
-        2256,
-        2829
+        7647,
+        3557,
+        4090
     ],
     [
         7,
@@ -72,9 +72,9 @@ let questions = [
         "I'm worse",
         "are a better listener",
         "are a worse listener",
-        5213,
-        3244,
-        1970
+        7722,
+        4623,
+        3099
     ],
     [
         8,
@@ -83,9 +83,9 @@ let questions = [
         "I'm less",
         "are more privileged",
         "are less privileged",
-        5197,
-        4374,
-        823
+        7758,
+        5880,
+        1878
     ],
     [
         9,
@@ -94,9 +94,9 @@ let questions = [
         "I smell worse",
         "smell better",
         "smell worse",
-        5175,
-        2705,
-        2470
+        7752,
+        4099,
+        3653
     ],
     [
         10,
@@ -105,9 +105,9 @@ let questions = [
         "I'm worse",
         "are a better communicator",
         "are a worse communicator",
-        5291,
-        2746,
-        2545
+        7838,
+        4066,
+        3772
     ],
     [
         11,
@@ -116,9 +116,9 @@ let questions = [
         "I'm worse",
         "are better at washing up",
         "are worse at washing up",
-        5155,
-        2497,
-        2658
+        7679,
+        3782,
+        3897
     ],
     [
         12,
@@ -127,9 +127,9 @@ let questions = [
         "I'm less",
         "are more curious",
         "are less curious",
-        5385,
-        4503,
-        883
+        7773,
+        5844,
+        1929
     ],
     [
         13,
@@ -138,9 +138,9 @@ let questions = [
         "I'm less happy",
         "are happier",
         "are less happy",
-        5209,
-        2582,
-        2627
+        7755,
+        3943,
+        3812
     ],
     [
         14,
@@ -149,9 +149,9 @@ let questions = [
         "I'm less kind",
         "are kinder",
         "are less kind",
-        5210,
-        3703,
-        1507
+        7076,
+        4768,
+        2308
     ],
     [
         15,
@@ -160,9 +160,9 @@ let questions = [
         "they're worse",
         "have better ideas",
         "have worse ideas",
-        5207,
-        3481,
-        1727
+        7080,
+        4519,
+        2561
     ],
     [
         16,
@@ -171,9 +171,9 @@ let questions = [
         "I'm less",
         "are more conservative",
         "are less conservative",
-        5334,
-        963,
-        4371
+        7170,
+        1790,
+        5380
     ],
     [
         17,
@@ -182,20 +182,20 @@ let questions = [
         "I complain less",
         "complain more",
         "complain less",
-        5351,
-        2247,
-        3105
+        7905,
+        3557,
+        4348
     ],
     [
         18,
-        "Do you give more to homeless  people",
+        "Do you give more to homeless people",
         "I give more",
         "I give less",
         "give more to homeless people",
         "give less to homeless people",
-        4924,
-        783,
-        4142
+        6800,
+        1617,
+        5183
     ],
     [
         19,
@@ -204,9 +204,9 @@ let questions = [
         "It's worse",
         "have a better music taste",
         "have a worse music taste",
-        5154,
-        2030,
-        3124
+        7037,
+        3677,
+        3360
     ],
     [
         20,
@@ -215,9 +215,9 @@ let questions = [
         "they're worse",
         "give better gifts",
         "give worse gifts",
-        5027,
-        1906,
-        3122
+        7536,
+        3154,
+        4382
     ],
     [
         21,
@@ -226,9 +226,9 @@ let questions = [
         "I'm worse",
         "are a better friend",
         "are a worse friend",
-        5305,
-        2481,
-        2824
+        7807,
+        3801,
+        4006
     ],
     [
         22,
@@ -237,9 +237,9 @@ let questions = [
         "I'm less",
         "are more progressive",
         "are less progressive",
-        5019,
-        3937,
-        1083
+        7534,
+        5343,
+        2191
     ],
     [
         23,
@@ -248,9 +248,9 @@ let questions = [
         "I'm worse",
         "are better looking",
         "are worse looking",
-        5346,
-        2659,
-        2688
+        7980,
+        3999,
+        3981
     ],
     [
         24,
@@ -259,9 +259,9 @@ let questions = [
         "I'm less",
         "are more interesting",
         "are less interesting",
-        4979,
-        2314,
-        2666
+        7673,
+        3710,
+        3963
     ],
     [
         25,
@@ -270,9 +270,9 @@ let questions = [
         "I'm worse",
         "are better at their work",
         "are worse at their work",
-        5028,
-        3302,
-        1726
+        7559,
+        4742,
+        2817
     ],
     [
         26,
@@ -281,9 +281,9 @@ let questions = [
         "I'm less",
         "are more ambitious",
         "are less ambitious",
-        5244,
-        2201,
-        3043
+        7765,
+        3452,
+        4313
     ],
     [
         27,
@@ -292,9 +292,9 @@ let questions = [
         "I'm less",
         "are more creative",
         "are less creative",
-        5289,
-        2658,
-        2631
+        7777,
+        4009,
+        3768
     ],
     [
         28,
@@ -303,9 +303,9 @@ let questions = [
         "I'm worse",
         "are better at sex",
         "are worse at sex",
-        3340,
-        1350,
-        1990
+        5854,
+        2594,
+        3260
     ],
     [
         29,
@@ -314,9 +314,9 @@ let questions = [
         "I'm less",
         "are more patient",
         "are less patient",
-        5046,
-        3133,
-        1913
+        7578,
+        4454,
+        3124
     ],
     [
         30,
@@ -325,9 +325,9 @@ let questions = [
         "worse",
         "have better dental hygiene",
         "have worse dental hygiene",
-        4700,
-        1968,
-        2733
+        7224,
+        3214,
+        4010
     ],
     [
         31,
@@ -336,9 +336,9 @@ let questions = [
         "less",
         "procrastinate more",
         "procrastinate less",
-        4558,
-        3476,
-        1082
+        6992,
+        4837,
+        2155
     ],
     [
         32,
@@ -347,9 +347,9 @@ let questions = [
         "I'm worse",
         "are a better driver",
         "are a worse driver",
-        4593,
-        2947,
-        1647
+        7058,
+        4223,
+        2835
     ],
     [
         33,
@@ -358,9 +358,9 @@ let questions = [
         "it was worse",
         "had a better childhood",
         "had a worse childhood",
-        4438,
-        3190,
-        1249
+        6946,
+        4591,
+        2355
     ],
     [
         34,
@@ -369,9 +369,9 @@ let questions = [
         "I'm worse",
         "are a better hugger",
         "are a worse hugger",
-        4367,
-        2234,
-        2133
+        6843,
+        3577,
+        3266
     ],
     [
         35,
@@ -380,9 +380,9 @@ let questions = [
         "I'm less funny",
         "are funnier",
         "are less funny",
-        4382,
-        2736,
-        1646
+        6835,
+        4042,
+        2793
     ],
     [
         36,
@@ -391,9 +391,9 @@ let questions = [
         "I'm worse",
         "are better at maths",
         "are worse at maths",
-        4578,
-        2997,
-        1581
+        7079,
+        4296,
+        2783
     ],
     [
         37,
@@ -402,31 +402,31 @@ let questions = [
         "less",
         "spend more time on their phone",
         "spend less time on their phone",
-        4550,
-        2451,
-        2100
+        7116,
+        3803,
+        3313
     ],
     [
         38,
-        "Are you more narcissitic",
+        "Are you more narcissistic",
         "I'm more",
         "I'm less",
-        "are more narcissitic",
-        "are less narcissitic",
-        4745,
-        1644,
-        3101
+        "are more narcissistic",
+        "are less narcissistic",
+        7189,
+        2801,
+        4388
     ],
     [
         39,
-        "Are you more sterotypically your gender",
+        "Are you more stereotypically your gender",
         "I'm more",
         "I'm less",
-        "are more sterotypically their gender",
-        "are less sterotypically their gender",
-        4734,
-        1410,
-        3324
+        "are more stereotypically their gender",
+        "are less stereotypically their gender",
+        7271,
+        2629,
+        4642
     ],
     [
         40,
@@ -435,9 +435,9 @@ let questions = [
         "it's worse",
         "have a better memory",
         "have a worse memory",
-        4659,
-        2120,
-        2539
+        7211,
+        3427,
+        3784
     ],
     [
         41,
@@ -446,9 +446,9 @@ let questions = [
         "I'm less",
         "are more humble",
         "are less humble",
-        4483,
-        2556,
-        1927
+        7054,
+        3942,
+        3112
     ],
     [
         42,
@@ -457,9 +457,9 @@ let questions = [
         "I'm worse",
         "are better at cooking",
         "are worse at cooking",
-        4222,
-        2204,
-        2018
+        6687,
+        3419,
+        3268
     ],
     [
         43,
@@ -468,9 +468,9 @@ let questions = [
         "less",
         "change their bed sheets more",
         "change their bed sheets less",
-        4491,
-        961,
-        3530
+        7064,
+        2186,
+        4878
     ],
     [
         44,
@@ -479,9 +479,9 @@ let questions = [
         "I have less",
         "have more common sense",
         "have less common sense",
-        4405,
-        3633,
-        772
+        6934,
+        5105,
+        1829
     ],
     [
         45,
@@ -490,9 +490,9 @@ let questions = [
         "I'm less",
         "are more confident",
         "are less confident",
-        4581,
-        1926,
-        2655
+        7074,
+        3154,
+        3920
     ],
     [
         46,
@@ -501,9 +501,9 @@ let questions = [
         "less",
         "exercise more",
         "exercise less",
-        4516,
-        1556,
-        2960
+        6973,
+        2624,
+        4349
     ],
     [
         47,
@@ -512,9 +512,9 @@ let questions = [
         "less",
         "read more",
         "read less",
-        4342,
-        1749,
-        2593
+        6768,
+        2840,
+        3928
     ],
     [
         48,
@@ -523,20 +523,20 @@ let questions = [
         "less",
         "sleep more",
         "sleep less",
-        4452,
-        1966,
-        2486
+        7023,
+        3183,
+        3840
     ],
     [
         49,
         "Do you have more friends ",
         "I have more",
-        "I have less",
+        "I have fewer",
         "have more friends",
         "have fewer friends",
-        4352,
-        920,
-        3432
+        6171,
+        1650,
+        4521
     ],
     [
         50,
@@ -545,9 +545,9 @@ let questions = [
         "I'm less healthy",
         "are healthier",
         "are less healthy",
-        4354,
-        2347,
-        2007
+        6861,
+        3546,
+        3315
     ],
     [
         51,
@@ -556,9 +556,9 @@ let questions = [
         "I'm less",
         "are more religious",
         "are less religious",
-        4347,
-        390,
-        3957
+        6950,
+        1404,
+        5546
     ],
     [
         52,
@@ -567,9 +567,251 @@ let questions = [
         "I'm less",
         "are more optimistic",
         "are less optimistic",
-        2757,
-        1373,
-        1384
+        4437,
+        2166,
+        2271
+    ],
+    [
+        53,
+        "Are you more socialist",
+        "I'm more",
+        "I'm less",
+        "are more socialist",
+        "are less socialist",
+        468,
+        250,
+        218
+    ],
+    [
+        54,
+        "Do you dress better",
+        "better",
+        "worse",
+        "dress better",
+        "dress worse",
+        473,
+        166,
+        307
+    ],
+    [
+        55,
+        "Do you have better handwriting",
+        "better",
+        "worse",
+        "have better handwriting",
+        "have worse handwriting",
+        454,
+        156,
+        298
+    ],
+    [
+        56,
+        "Do you have sex more often",
+        "more",
+        "less",
+        "have sex more often",
+        "have sex less often",
+        496,
+        80,
+        416
+    ],
+    [
+        57,
+        "Are you wealthier",
+        "I'm wealthier",
+        "I'm less wealthy",
+        "are wealthier",
+        "are less wealthy",
+        482,
+        284,
+        198
+    ],
+    [
+        58,
+        "Are you a better partner ",
+        "I'm better",
+        "I'm worse",
+        "are a better partner ",
+        "are a worse partner ",
+        497,
+        286,
+        211
+    ],
+    [
+        59,
+        "Are you more honest",
+        "I'm more",
+        "I'm less",
+        "are more honest",
+        "are less honest",
+        483,
+        365,
+        118
+    ],
+    [
+        60,
+        "Are you more empathetic",
+        "I'm more",
+        "I'm less",
+        "are more empathetic",
+        "are less empathetic",
+        447,
+        311,
+        136
+    ],
+    [
+        61,
+        "Are you braver",
+        "I'm braver",
+        "I'm less brave",
+        "are braver",
+        "are less brave",
+        468,
+        192,
+        276
+    ],
+    [
+        62,
+        "Do you drink more water",
+        "I drink more",
+        "I drink less",
+        "drink more water",
+        "drink less water",
+        482,
+        225,
+        257
+    ],
+    [
+        63,
+        "Do you worry more",
+        "more",
+        "less",
+        "worry more",
+        "worry less",
+        487,
+        327,
+        160
+    ],
+    [
+        64,
+        "Are you more punctual",
+        "I'm more",
+        "I'm less",
+        "are more punctual",
+        "are less punctual",
+        513,
+        287,
+        226
+    ],
+    [
+        65,
+        "Do you use social media more",
+        "more",
+        "less",
+        "use social media more",
+        "use social media less",
+        496,
+        132,
+        364
+    ],
+    [
+        66,
+        "Are you lazier",
+        "I'm lazier",
+        "I'm less lazy",
+        "are lazier",
+        "are less lazy",
+        495,
+        281,
+        214
+    ],
+    [
+        67,
+        "Are you more extroverted",
+        "I'm more",
+        "I'm less",
+        "are more extroverted",
+        "are less extroverted",
+        509,
+        124,
+        385
+    ],
+    [
+        68,
+        "Are you more loved",
+        "I'm more",
+        "I'm less",
+        "are more loved",
+        "are less loved",
+        474,
+        245,
+        229
+    ],
+    [
+        69,
+        "Are you more annoying",
+        "I'm more",
+        "I'm less",
+        "are more annoying",
+        "are less annoying",
+        477,
+        205,
+        272
+    ],
+    [
+        70,
+        "Do you cry more",
+        "more",
+        "less",
+        "cry more",
+        "cry less",
+        486,
+        169,
+        317
+    ],
+    [
+        71,
+        "Are you more perceptive",
+        "I'm more",
+        "I'm less",
+        "are more perceptive",
+        "are less perceptive",
+        457,
+        337,
+        120
+    ],
+    [
+        72,
+        "Are you more sensitive",
+        "I'm more",
+        "I'm less",
+        "are more sensitive",
+        "are less sensitive",
+        501,
+        318,
+        183
+    ],
+    [
+        73,
+        "Are you more fulfilled",
+        "I'm more",
+        "I'm less",
+        "are more fulfilled",
+        "are less fulfilled",
+        445,
+        213,
+        232
+    ],
+    [
+        74,
+        "Are you more important",
+        "I'm more",
+        "I'm less",
+        "are more important",
+        "are less important",
+        481,
+        159,
+        322
     ]
 ]
         
