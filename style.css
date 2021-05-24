@@ -22,14 +22,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url("fonts/CormorantGaramond-Light.woff2") format("woff2"), url("fonts/CormorantGaramond-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 .speed2 {
   position: absolute;
   font-size: 1.1vw;
@@ -726,7 +718,7 @@ svg {
   }
   .navbox h1 {
     font-family: 'Cormorant Garamond';
-    font-weight: 300;
+    font-weight: 500;
     margin: 0px;
     font-size: 7vw;
   }
